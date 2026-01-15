@@ -1,0 +1,434 @@
+/**
+ * Custom CSS for Portfolio Page
+ */
+
+/* Portfolio Section Specific Styles */
+.section.portfolio {
+  padding-block: var(--section-padding);
+  background: linear-gradient(135deg, var(--isabelline), #f0f9f8);
+  position: relative;
+  overflow: hidden;
+}
+
+.h2.section-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.h2.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  background: linear-gradient(to right, var(--kappel), var(--selective-yellow));
+  border-radius: var(--radius-5);
+}
+
+.portfolio-card {
+  background: linear-gradient(135deg, var(--white), #f8fdfc);
+  border-radius: var(--radius-10);
+  box-shadow: var(--shadow-2);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid rgba(29, 161, 142, 0.1);
+}
+
+.portfolio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-4);
+}
+
+.card-banner {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.card-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 40%);
+  z-index: 1;
+  transition: all 0.4s ease;
+}
+
+.card-banner .img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  position: relative;
+  z-index: 0;
+}
+
+.portfolio-card:hover .card-banner .img-cover {
+  transform: scale(1.08);
+}
+
+.portfolio-card:hover .card-banner::before {
+  background: linear-gradient(to top, rgba(0,0,0,0.1) 0%, transparent 60%);
+}
+
+.card-content {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-tags {
+  display: flex;
+  gap: 10px;
+  margin-block-end: 15px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  background: linear-gradient(135deg, hsla(var(--color), 0.15), hsla(var(--color), 0.3));
+  color: hsl(var(--color));
+  border: 1px solid hsla(var(--color), 0.3);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-600);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.badge:hover::before {
+  left: 100%;
+}
+
+.badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-family: var(--ff-league_spartan);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-600);
+  margin-block-end: 10px;
+  color: var(--eerie-black-1);
+  transition: var(--transition-1);
+}
+
+.card-title:is(:hover, :focus) { color: var(--kappel); }
+
+.card-text {
+  color: var(--gray-web);
+  line-height: 1.6;
+  margin-block-end: 20px;
+  flex-grow: 1;
+}
+
+.btn-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--kappel);
+  font-weight: var(--fw-600);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  padding: 8px 0;
+  z-index: 1;
+}
+
+.btn-text::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--kappel);
+  transition: width 0.4s ease;
+  z-index: -1;
+}
+
+.btn-text:hover::before {
+  width: 100%;
+}
+
+.btn-text ion-icon {
+  transition: transform 0.3s ease;
+}
+
+.btn-text:hover ion-icon {
+  transform: translateX(3px);
+}
+
+/* Counter Section Styling */
+.counter-card {
+  text-align: center;
+  padding: 30px;
+  background: var(--white);
+  border-radius: var(--radius-10);
+  box-shadow: var(--shadow-2);
+  transition: transform 0.3s ease;
+}
+
+.counter-card:hover {
+  transform: translateY(-5px);
+}
+
+.counter-card .title-large {
+  font-family: var(--ff-league_spartan);
+  font-size: var(--fs-1);
+  font-weight: var(--fw-700);
+  color: var(--kappel);
+  margin-block-end: 10px;
+}
+
+.counter-card .label-lg {
+  color: var(--eerie-black-1);
+  font-weight: var(--fw-500);
+}
+
+/* Roadmap Styling */
+.roadmap-container {
+  position: relative;
+  padding: 40px 0;
+  overflow: visible;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(235, 248, 246, 0.3) 100%);
+  border-radius: var(--radius-10);
+  backdrop-filter: blur(10px);
+  margin: 20px 0;
+  z-index: 1;
+}
+
+.roadmap-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: linear-gradient(to bottom, var(--kappel), var(--selective-yellow), var(--kappel));
+  transform: translateX(-50%);
+  z-index: 1;
+  border-radius: var(--radius-circle);
+  box-shadow: 0 0 15px rgba(29, 161, 142, 0.5);
+}
+
+.roadmap-item {
+  position: relative;
+  margin-bottom: 80px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.roadmap-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.roadmap-marker {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(135deg, var(--kappel), var(--selective-yellow));
+  border-radius: 50%;
+  border: 4px solid var(--white);
+  box-shadow: 0 0 0 4px var(--kappel), 0 0 20px rgba(29, 161, 142, 0.6), 0 0 30px rgba(255, 193, 7, 0.4);
+  z-index: 2;
+  animation: glow 2s infinite alternate, pulse 2s infinite;
+  transition: all 0.3s ease;
+}
+
+.roadmap-marker:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 6px var(--kappel), 0 0 25px rgba(29, 161, 142, 0.8), 0 0 40px rgba(255, 193, 7, 0.6);
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 0 4px var(--kappel), 0 0 10px rgba(29, 161, 142, 0.6);
+  }
+  to {
+    box-shadow: 0 0 0 4px var(--kappel), 0 0 20px var(--selective-yellow), 0 0 30px var(--kappel);
+  }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(29, 161, 142, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(29, 161, 142, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(29, 161, 142, 0); }
+}
+
+.roadmap-item:nth-child(odd) {
+  padding-right: calc(50% + 60px);
+  text-align: right;
+}
+
+.roadmap-item:nth-child(odd) .roadmap-marker {
+  right: -12px;
+}
+
+.roadmap-item:nth-child(even) {
+  padding-left: calc(50% + 60px);
+}
+
+.roadmap-item:nth-child(even) .roadmap-marker {
+  left: -12px;
+}
+
+.roadmap-item .portfolio-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
+}
+
+.roadmap-item .portfolio-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.3);
+}
+
+.roadmap-item .portfolio-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--kappel), transparent);
+  transition: left 0.5s;
+}
+
+.roadmap-item .portfolio-card:hover::before {
+  left: 100%;
+}
+
+/* Card Number Styling */
+.card-number {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-family: var(--ff-league_spartan);
+  font-size: var(--fs-1);
+  font-weight: var(--fw-700);
+  background: linear-gradient(135deg, var(--kappel), var(--selective-yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.8;
+  z-index: 1;
+  pointer-events: none;
+  text-shadow: 0 0 10px rgba(29, 161, 142, 0.3);
+}
+
+/* Floating Elements */
+.floating-element {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(29, 161, 142, 0.15) 0%, rgba(29, 161, 142, 0) 70%);
+  z-index: 0;
+  animation: float 8s infinite ease-in-out;
+}
+
+.floating-element.float-1 {
+  width: 80px;
+  height: 80px;
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.floating-element.float-2 {
+  width: 60px;
+  height: 60px;
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.floating-element.float-3 {
+  width: 100px;
+  height: 100px;
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(20px, 20px);
+  }
+  50% {
+    transform: translate(0, 40px);
+  }
+  75% {
+    transform: translate(-20px, 20px);
+  }
+}
+
+/* Responsive adjustments for roadmap */
+@media (max-width: 768px) {
+  .roadmap-line {
+    left: 30px;
+  }
+  
+  .roadmap-item {
+    padding-left: 70px !important;
+    padding-right: 0 !important;
+    text-align: left !important;
+  }
+  
+  .roadmap-marker {
+    left: 20px !important;
+    right: auto !important;
+  }
+}
+
+/* Responsive adjustments for portfolio */
+@media (max-width: 768px) {
+  .card-banner {
+    height: 200px;
+  }
+  
+  .section.portfolio {
+    padding-block: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-banner {
+    height: 180px;
+  }
+  
+  .card-content {
+    padding: 15px;
+  }
+}

@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Service | VectorWeb Digital Agency</title>
+  <meta name="description" content="Book web development, app design, branding, logo creation, and digital marketing services at VectorWeb.">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Ion Icon -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <style>
+    .booking-form {
+      background: var(--white);
+      border-radius: var(--radius-10);
+      padding: 40px;
+      box-shadow: var(--shadow-4);
+      max-width: 600px;
+      margin: 40px auto;
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--eerie-black-1);
+      font-weight: var(--fw-500);
+    }
+    
+    .form-input {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid var(--platinum);
+      border-radius: var(--radius-5);
+      font-size: var(--fs-5);
+      transition: var(--transition-1);
+      background: var(--white);
+    }
+    
+    .form-input:focus {
+      border-color: var(--kappel);
+      outline: none;
+    }
+    
+    .form-select {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid var(--platinum);
+      border-radius: var(--radius-5);
+      font-size: var(--fs-5);
+      background: var(--white);
+      color: var(--gray-web);
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 1em;
+    }
+    
+    .form-textarea {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid var(--platinum);
+      border-radius: var(--radius-5);
+      font-size: var(--fs-5);
+      min-height: 120px;
+      resize: vertical;
+      transition: var(--transition-1);
+    }
+    
+    .form-textarea:focus {
+      border-color: var(--kappel);
+      outline: none;
+    }
+    
+    .response-message {
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+      border-radius: var(--radius-5);
+      font-weight: var(--fw-500);
+    }
+    
+    .response-success {
+      background-color: rgba(46, 204, 113, 0.2);
+      color: #27ae60;
+      border: 1px solid #27ae60;
+    }
+    
+    .response-error {
+      background-color: rgba(231, 76, 60, 0.2);
+      color: #e74c3c;
+      border: 1px solid #e74c3c;
+    }
+    
+    .budget-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+    
+    .budget-option {
+      padding: 12px;
+      border: 2px solid var(--platinum);
+      border-radius: var(--radius-5);
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition-1);
+    }
+    
+    .budget-option:hover,
+    .budget-option.selected {
+      border-color: var(--kappel);
+      background-color: hsla(170, 75%, 41%, 0.1);
+    }
+    
+    .booking-intro {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+    
+    .pricing-table {
+      margin: 30px 0;
+      background: var(--isabelline);
+      padding: 25px;
+      border-radius: var(--radius-10);
+    }
+    
+    .pricing-table h3 {
+      color: var(--kappel);
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    
+    .pricing-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--platinum);
+    }
+    
+    .pricing-item:last-child {
+      border-bottom: none;
+    }
+    
+    /* Enhanced booking page styles */
+    .booking-form {
+      background: white;
+      border-radius: var(--radius-10);
+      padding: 40px;
+      box-shadow: var(--shadow-4);
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #ffffff, #f8fffe);
+    }
+    
+    .form-group-enhanced {
+      margin-bottom: 20px;
+    }
+    
+    .form-label-enhanced {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--eerie-black-1);
+      font-weight: var(--fw-600);
+      font-size: var(--fs-5);
+    }
+    
+    .form-input-enhanced {
+      width: 100%;
+      padding: 15px 20px;
+      border: 2px solid var(--platinum);
+      border-radius: var(--radius-5);
+      font-size: var(--fs-5);
+      transition: var(--transition-1);
+      background: var(--white);
+    }
+    
+    .form-select-enhanced {
+      width: 100%;
+      padding: 15px 20px;
+      border: 2px solid var(--platinum);
+      border-radius: var(--radius-5);
+      font-size: var(--fs-5);
+      background: var(--white);
+      color: var(--gray-web);
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 1em;
+    }
+    
+    .form-textarea-enhanced {
+      width: 100%;
+      padding: 15px 20px;
+      border: 2px solid var(--platinum);
+      border-radius: var(--radius-5);
+      font-size: var(--fs-5);
+      min-height: 120px;
+      resize: vertical;
+      transition: var(--transition-1);
+    }
+    
+    .submit-btn-enhanced {
+      width: 100%;
+      padding: 18px;
+      font-size: var(--fs-5);
+      font-weight: var(--fw-600);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--kappel), #2e8b57);
+      border: none;
+      color: white;
+      border-radius: var(--radius-5);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .submit-btn-enhanced:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-4);
+    }
+    
+    .response-message-enhanced {
+      text-align: center;
+      padding: 12px;
+      margin-top: 15px;
+      border-radius: var(--radius-5);
+      font-weight: var(--fw-500);
+      font-size: var(--fs-5);
+    }
+    
+    .booking-form::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--kappel), #2e8b57);
+      z-index: 2;
+    }
+    
+    .form-icon {
+      display: inline-block;
+      margin-right: 8px;
+      font-size: 18px;
+      vertical-align: middle;
+      color: var(--kappel);
+    }
+    
+    .input-border {
+      position: relative;
+      height: 2px;
+      background: transparent;
+      transition: all 0.3s ease;
+      margin-top: 5px;
+    }
+    
+    .form-input-enhanced:focus + .input-border,
+    .form-select-enhanced:focus + .input-border,
+    .form-textarea-enhanced:focus + .input-border {
+      background: linear-gradient(90deg, var(--kappel), #2e8b57);
+    }
+    
+    .form-input-enhanced:focus,
+    .form-select-enhanced:focus,
+    .form-textarea-enhanced:focus {
+      border-color: transparent;
+      box-shadow: 0 0 0 2px hsla(170, 75%, 41%, 0.2);
+    }
+    
+    .form-group-enhanced {
+      position: relative;
+      margin-bottom: 25px;
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        <img src="webikit4.png" width="120" height="36" alt="VectorWeb logo">
+      </a>
+      
+      <div class="header-center-text">
+        <span class="vector-text">VECTOR</span>
+      </div>
+
+      <nav class="navbar" data-navbar>
+        <div class="wrapper">
+          <a href="index.html" class="logo">
+            <img src="webikit4.png" width="80" height="24" alt="VectorWeb logo">
+          </a>
+          
+          <div class="mobile-header-center">
+            <span class="vector-text">Vector</span>
+          </div>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link">Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="index.html#services" class="navbar-link">Services</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="portfolio.html" class="navbar-link">Portfolio</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="index.html#about" class="navbar-link">About</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="index.html#contact" class="navbar-link">Contact</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+      <div class="header-actions">
+
+        <div class="search-container">
+          <button class="header-action-btn" aria-label="toggle search" title="Search" id="searchToggle">
+            <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+          </button>
+          <div class="search-box" id="searchBox">
+            <input type="text" id="searchInput" placeholder="Search services...">
+            <ul class="search-suggestions" id="searchSuggestions">
+              <li data-search="app development">App Development</li>
+              <li data-search="web development">Web Development</li>
+              <li data-search="logo design">Logo Design</li>
+              <li data-search="digital marketing">Digital Marketing</li>
+              <li data-search="social media">Social Media Handling</li>
+            </ul>
+          </div>
+        </div>
+
+
+        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+      </div>
+
+    </div>
+  </header>
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #BOOKING FORM
+      -->
+
+      <section class="section" style="padding: 80px 0; background: linear-gradient(135deg, #f0f9ff, #e6f7ff);">
+        <div class="container">
+          
+          <div class="booking-intro" style="position: relative; margin-bottom: 40px; border-radius: var(--radius-10); overflow: hidden; background: linear-gradient(135deg, #f8fffe, #e6fcf5); padding: 50px 30px; box-shadow: inset 0 0 0 1px hsla(170, 75%, 41%, 0.1);">
+            <div class="gradient-overlay" style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--kappel), #2e8b57);"></div>
+            <div style="position: relative; z-index: 1; text-align: center;">
+              <div style="display: flex; justify-content: center; margin-bottom: 25px;">
+                <div style="background: linear-gradient(135deg, var(--kappel), #2e8b57); width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 32px; box-shadow: var(--shadow-4); animation: float 3s ease-in-out infinite;">
+                  <ion-icon name="calendar-outline" style="font-size: 45px;"></ion-icon>
+                </div>
+              </div>
+              
+              <h1 class="h1 section-title" style="margin-bottom: 15px; color: var(--eerie-black-1); font-size: var(--fs-2);">Book Your Digital Service</h1>
+              
+              <p class="section-text" style="font-size: var(--fs-5); color: var(--gray-web); max-width: 600px; margin: 0 auto 25px; line-height: 1.7;">
+                Tell us about your project and we'll get back to you with a customized solution and quote.
+              </p>
+              
+              <div class="booking-stats" style="display: flex; justify-content: center; gap: 25px; margin-top: 25px; flex-wrap: wrap;">
+                <div class="stat-item" style="text-align: center; padding: 20px 15px; background: white; border-radius: var(--radius-10); box-shadow: var(--shadow-3); min-width: 120px; transition: transform 0.3s ease;">
+                  <div style="font-size: var(--fs-2); font-weight: var(--fw-700); color: var(--kappel); margin-bottom: 5px;">98%</div>
+                  <div style="font-size: var(--fs-7); color: var(--gray-web);">Success Rate</div>
+                </div>
+                <div class="stat-item" style="text-align: center; padding: 20px 15px; background: white; border-radius: var(--radius-10); box-shadow: var(--shadow-3); min-width: 120px; transition: transform 0.3s ease;">
+                  <div style="font-size: var(--fs-2); font-weight: var(--fw-700); color: var(--kappel); margin-bottom: 5px;">24/7</div>
+                  <div style="font-size: var(--fs-7); color: var(--gray-web);">Support</div>
+                </div>
+                <div class="stat-item" style="text-align: center; padding: 20px 15px; background: white; border-radius: var(--radius-10); box-shadow: var(--shadow-3); min-width: 120px; transition: transform 0.3s ease;">
+                  <div style="font-size: var(--fs-2); font-weight: var(--fw-700); color: var(--kappel); margin-bottom: 5px;">500+</div>
+                  <div style="font-size: var(--fs-7); color: var(--gray-web);">Projects</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <style>
+            @keyframes float {
+              0% {
+                transform: translateY(0px);
+              }
+              50% {
+                transform: translateY(-10px);
+              }
+              100% {
+                transform: translateY(0px);
+              }
+            }
+            
+            .stat-item:hover {
+              transform: translateY(-5px);
+              box-shadow: var(--shadow-4);
+            }
+            
+            .pricing-item:hover {
+              transform: translateY(-8px);
+              box-shadow: var(--shadow-4);
+            }
+            
+            .pricing-item:nth-child(2):hover {
+              transform: translateY(-8px);
+            }
+          </style>
+          
+          <div class="pricing-table" style="margin: 30px auto; max-width: 900px; padding: 0; border-radius: var(--radius-10); overflow: hidden; box-shadow: var(--shadow-4); position: relative; background: linear-gradient(135deg, #ffffff, #f0faf8);">
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, var(--kappel), #2e8b57); z-index: 2;"></div>
+            <div style="position: relative; z-index: 1; padding: 30px 20px 20px; background: var(--white);">
+              <h3 style="color: var(--kappel); margin-bottom: 25px; text-align: center; font-size: var(--fs-3); font-weight: var(--fw-700); position: relative; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <ion-icon name="pricetags-outline" style="font-size: 24px;"></ion-icon>
+                Our Pricing Guide
+              </h3>
+              <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; position: relative; z-index: 1;">
+                <div class="pricing-item" style="padding: 25px 20px; border-radius: var(--radius-10); background: var(--white); border: 2px solid var(--platinum); box-shadow: var(--shadow-3); transition: all 0.3s ease; position: relative; overflow: hidden; text-align: center;">
+                  <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--kappel), #2e8b57);"></div>
+                  <div style="position: absolute; top: -20px; right: -20px; width: 60px; height: 60px; border-radius: 50%; background: hsla(170, 75%, 41%, 0.1); z-index: 0;"></div>
+                  <div style="position: relative; z-index: 1;">
+                    <div style="font-weight: var(--fw-700); color: var(--kappel); font-size: var(--fs-4); margin-bottom: 8px; text-align: center; display: inline-block; padding: 4px 15px; background: hsla(170, 75%, 41%, 0.1); border-radius: var(--radius-pill);">Starter</div>
+                    <div style="font-size: var(--fs-2); font-weight: var(--fw-700); color: var(--eerie-black-1); text-align: center; margin: 15px 0; font-family: var(--ff-league_spartan);">₹5,000+</div>
+                    <p style="color: var(--gray-web); font-size: var(--fs-7); margin-bottom: 15px;">Perfect for small businesses getting started online</p>
+                    <ul style="list-style: none; padding: 0; margin: 0; text-align: left;">
+                      <li style="padding: 6px 0 6px 25px; display: flex; align-items: center; gap: 8px; color: var(--gray-web); position: relative;"><ion-icon name="checkmark-circle" style="color: var(--kappel); font-size: 18px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></ion-icon> Basic Website</li>
+                      <li style="padding: 6px 0 6px 25px; display: flex; align-items: center; gap: 8px; color: var(--gray-web); position: relative;"><ion-icon name="checkmark-circle" style="color: var(--kappel); font-size: 18px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></ion-icon> Up to 5 Pages</li>
+                      <li style="padding: 6px 0 6px 25px; display: flex; align-items: center; gap: 8px; color: var(--gray-web); position: relative;"><ion-icon name="checkmark-circle" style="color: var(--kappel); font-size: 18px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></ion-icon> Contact Form</li>
+                      <li style="padding: 6px 0 6px 25px; display: flex; align-items: center; gap: 8px; color: var(--gray-web); position: relative;"><ion-icon name="checkmark-circle" style="color: var(--kappel); font-size: 18px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></ion-icon> Basic SEO</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="pricing-item" style="padding: 30px 20px 25px; border-radius: var(--radius-10); background: var(--white); border: 2px solid var(--kappel); box-shadow: var(--shadow-4); transition: all 0.3s ease; position: relative; overflow: hidden; text-align: center; z-index: 2;">
+                  <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--kappel), #2e8b57);"></div>
+                  <div style="position: absolute; top: -25px; right: -25px; width: 70px; height: 70px; border-radius: 50%; background: hsla(170, 75%, 41%, 0.15); z-index: 0;"></div>
+                  <div style="position: absolute; top: 10px; right: 10px; background: var(--kappel); color: white; padding: 4px 12px; border-radius: var(--radius-pill); font-size: var(--fs-7); font-weight: var(--fw-600); z-index: 1;">POPULAR</div>
+                  <div style="position: relative; z-index: 1;">
+                    <div style="font-weight: var(--fw-700); color: var(--kappel); font-size: var(--fs-4); margin-bottom: 8px; text-align: center; display: inline-block; padding: 4px 15px; background: hsla(170, 75%, 41%, 0.1); border-radius: var(--radius-pill);">Professional</div>
+                    <div style="font-size: var(--fs-2); font-weight: var(--fw-700); color: var(--eerie-black-1); text-align: center; margin: 15px 0; font-family: var(--ff-league_spartan);">₹15,000+</div>
+                    <p style="color: var(--gray-web); font-size: var(--fs-7); margin-bottom: 15px;">Ideal for growing businesses with advanced needs</p>
+                    <ul style="list-style: none; padding: 0; margin: 0; text-align: left;">
+                      <li style="padding: 6px 0 6px 25px; display: flex; align-items: center; gap: 8px; color: var(--gray-web); position: relative;"><ion-icon name="checkmark-circle" style="color: var(--kappel); font-size: 18px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></ion-icon> Advanced Website</li>
+                      <li style="padding: 6px 0 6px 25px; display: flex; align-items: center; gap: 8px; color: var(--gray-web); position: relative;"><ion-icon name="checkmark-circle" style="color: var(--kappel); font-size: 18px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></ion-icon> CMS Integration</li>
+                      <li style="padding: 6px 0 6px 25px; display: flex; align-items: center; gap: 8px; color: var(--gray-web); position: relative;"><ion-icon name="checkmark-circle" style="color: var(--kappel); font-size: 18px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></ion-icon> SEO Optimization</li>
+                      <li style="padding: 6px 0 6px 25px; display: flex; align-items: center; gap: 8px; color: var(--gray-web); position: relative;"><ion-icon name="checkmark-circle" style="color: var(--kappel); font-size: 18px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></ion-icon> E-commerce Functionality</li>
+                      <li style="padding: 6px 0 6px 25px; display: flex; align-items: center; gap: 8px; color: var(--gray-web); position: relative;"><ion-icon name="checkmark-circle" style="color: var(--kappel); font-size: 18px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></ion-icon> Analytics Setup</li>
+                      <li style="padding: 6px 0 6px 25px; display: flex; align-items: center; gap: 8px; color: var(--gray-web); position: relative;"><ion-icon name="checkmark-circle" style="color: var(--kappel); font-size: 18px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></ion-icon> Free Domain & Hosting (1 Year)</li>
+                      <li style="padding: 6px 0 6px 25px; display: flex; align-items: center; gap: 8px; color: var(--gray-web); position: relative;"><ion-icon name="checkmark-circle" style="color: var(--kappel); font-size: 18px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></ion-icon> 6 Months Support</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="pricing-item" style="padding: 25px 20px; border-radius: var(--radius-10); background: var(--white); border: 2px solid var(--platinum); box-shadow: var(--shadow-3); transition: all 0.3s ease; position: relative; overflow: hidden; text-align: center;">
+                  <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--kappel), #2e8b57);"></div>
+                  <div style="position: absolute; top: -20px; right: -20px; width: 60px; height: 60px; border-radius: 50%; background: hsla(170, 75%, 41%, 0.1); z-index: 0;"></div>
+                  <div style="position: relative; z-index: 1;">
+                    <div style="font-weight: var(--fw-700); color: var(--kappel); font-size: var(--fs-4); margin-bottom: 8px; text-align: center; display: inline-block; padding: 4px 15px; background: hsla(170, 75%, 41%, 0.1); border-radius: var(--radius-pill);">Enterprise</div>
+                    <div style="font-size: var(--fs-2); font-weight: var(--fw-700); color: var(--eerie-black-1); text-align: center; margin: 15px 0; font-family: var(--ff-league_spartan);">Custom</div>
+                    <p style="color: var(--gray-web); font-size: var(--fs-7); margin-bottom: 15px;">For complex projects with specialized requirements</p>
+                    <ul style="list-style: none; padding: 0; margin: 0; text-align: left;">
+                      <li style="padding: 6px 0 6px 25px; display: flex; align-items: center; gap: 8px; color: var(--gray-web); position: relative;"><ion-icon name="checkmark-circle" style="color: var(--kappel); font-size: 18px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></ion-icon> Full Custom Solution</li>
+                      <li style="padding: 6px 0 6px 25px; display: flex; align-items: center; gap: 8px; color: var(--gray-web); position: relative;"><ion-icon name="checkmark-circle" style="color: var(--kappel); font-size: 18px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></ion-icon> Dedicated Project Manager</li>
+                      <li style="padding: 6px 0 6px 25px; display: flex; align-items: center; gap: 8px; color: var(--gray-web); position: relative;"><ion-icon name="checkmark-circle" style="color: var(--kappel); font-size: 18px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></ion-icon> 24/7 Priority Support</li>
+                      <li style="padding: 6px 0 6px 25px; display: flex; align-items: center; gap: 8px; color: var(--gray-web); position: relative;"><ion-icon name="checkmark-circle" style="color: var(--kappel); font-size: 18px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></ion-icon> Ongoing Maintenance</li>
+                      <li style="padding: 6px 0 6px 25px; display: flex; align-items: center; gap: 8px; color: var(--gray-web); position: relative;"><ion-icon name="checkmark-circle" style="color: var(--kappel); font-size: 18px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></ion-icon> Custom Integrations</li>
+                      <li style="padding: 6px 0 6px 25px; display: flex; align-items: center; gap: 8px; color: var(--gray-web); position: relative;"><ion-icon name="checkmark-circle" style="color: var(--kappel); font-size: 18px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></ion-icon> Free Domain & Hosting (1 Year)</li>
+                      <li style="padding: 6px 0 6px 25px; display: flex; align-items: center; gap: 8px; color: var(--gray-web); position: relative;"><ion-icon name="checkmark-circle" style="color: var(--kappel); font-size: 18px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></ion-icon> 3 Months Free Updates</li>
+                      <li style="padding: 6px 0 6px 25px; display: flex; align-items: center; gap: 8px; color: var(--gray-web); position: relative;"><ion-icon name="checkmark-circle" style="color: var(--kappel); font-size: 18px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></ion-icon> Performance Analysis</li>
+                      <li style="padding: 6px 0 6px 25px; display: flex; align-items: center; gap: 8px; color: var(--gray-web); position: relative;"><ion-icon name="checkmark-circle" style="color: var(--kappel); font-size: 18px; position: absolute; left: 0; top: 50%; transform: translateY(-50%);"></ion-icon> SEO Audit & Recommendations</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="booking-form" style="position: relative; overflow: hidden; border-radius: var(--radius-10); padding: 0;">
+            <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, var(--kappel), #2e8b57); z-index: 2;"></div>
+            
+            <form id="bookingForm" style="position: relative; z-index: 1; background: var(--white); padding: 35px; border-radius: var(--radius-10); box-shadow: var(--shadow-4);">
+              
+              <div class="form-group-enhanced">
+                <label for="name" class="form-label-enhanced">
+                  <ion-icon name="person-outline" class="form-icon"></ion-icon>
+                  Full Name *
+                </label>
+                <input type="text" id="name" class="form-input-enhanced" placeholder="Enter your full name" required style="transition: all 0.3s ease;">
+                <div class="input-border"></div>
+              </div>
+              
+              <div class="form-group-enhanced">
+                <label for="email" class="form-label-enhanced">
+                  <ion-icon name="mail-outline" class="form-icon"></ion-icon>
+                  Email Address *
+                </label>
+                <input type="email" id="email" class="form-input-enhanced" placeholder="Enter your email address" required style="transition: all 0.3s ease;">
+                <div class="input-border"></div>
+              </div>
+              
+              <div class="form-group-enhanced">
+                <label for="phone" class="form-label-enhanced">
+                  <ion-icon name="call-outline" class="form-icon"></ion-icon>
+                  Phone Number *
+                </label>
+                <input type="tel" id="phone" class="form-input-enhanced" placeholder="Enter your phone number" required style="transition: all 0.3s ease;">
+                <div class="input-border"></div>
+              </div>
+              
+              <div class="form-group-enhanced">
+                <label for="service" class="form-label-enhanced">
+                  <ion-icon name="construct-outline" class="form-icon"></ion-icon>
+                  Service Type *
+                </label>
+                <select id="service" class="form-select-enhanced" required style="transition: all 0.3s ease;">
+                  <option value="">Select a service</option>
+                  <option value="Web Development">Web Development</option>
+                  <option value="App Development">App Development</option>
+                  <option value="Branding & Logo">Branding & Logo Design</option>
+                  <option value="Digital Marketing">Digital Marketing</option>
+                  <option value="UI/UX Design">UI/UX Design</option>
+                  <option value="E-commerce">E-commerce Solutions</option>
+                  <option value="Maintenance">Maintenance & Support</option>
+                </select>
+                <div class="input-border"></div>
+              </div>
+              
+              <div class="form-group-enhanced">
+                <label for="budget" class="form-label-enhanced">
+                  <ion-icon name="pricetag-outline" class="form-icon"></ion-icon>
+                  Budget Range *
+                </label>
+                <select id="budget" class="form-select-enhanced" required style="transition: all 0.3s ease;">
+                  <option value="">Select your budget range</option>
+                  <option value="₹5,000 - ₹15,000">₹5,000 - ₹15,000</option>
+                  <option value="₹15,001 - ₹30,000">₹15,001 - ₹30,000</option>
+                  <option value="₹30,001 - ₹50,000">₹30,001 - ₹50,000</option>
+                  <option value="₹50,001 - ₹1,00,000">₹50,001 - ₹1,00,000</option>
+                  <option value="Custom/Higher">Custom/Higher</option>
+                </select>
+                <div class="input-border"></div>
+              </div>
+              
+              <div class="form-group-enhanced">
+                <label for="timeline" class="form-label-enhanced">
+                  <ion-icon name="time-outline" class="form-icon"></ion-icon>
+                  Expected Timeline *
+                </label>
+                <select id="timeline" class="form-select-enhanced" required style="transition: all 0.3s ease;">
+                  <option value="">Select timeline</option>
+                  <option value="As soon as possible">As soon as possible</option>
+                  <option value="Within 1 month">Within 1 month</option>
+                  <option value="1-3 months">1-3 months</option>
+                  <option value="3-6 months">3-6 months</option>
+                  <option value="6+ months">6+ months</option>
+                </select>
+                <div class="input-border"></div>
+              </div>
+              
+              <div class="form-group-enhanced">
+                <label for="message" class="form-label-enhanced">
+                  <ion-icon name="document-text-outline" class="form-icon"></ion-icon>
+                  Project Details
+                </label>
+                <textarea id="message" class="form-textarea-enhanced" placeholder="Describe your project requirements, goals, and any specific features you need..." style="transition: all 0.3s ease;"></textarea>
+                <div class="input-border"></div>
+              </div>
+              
+              <button type="submit" class="submit-btn-enhanced" style="background: linear-gradient(135deg, var(--kappel), #2e8b57); transition: all 0.3s ease; margin-top: 10px;">
+                <ion-icon name="send-outline" aria-hidden="true"></ion-icon>
+                <span>Submit Booking</span>
+              </button>
+              
+              <div id="responseMessage" class="response-message-enhanced" style="margin-top: 20px;"></div>
+              
+            </form>
+            
+          </div>
+          
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer" style="background-image: url('./assets/images/footer-bg.png')">
+
+    <div class="footer-top section">
+      <div class="container grid-list">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="webikit4.png" width="162" height="50" alt="VectorWeb logo">
+          </a>
+
+          <p class="footer-brand-text">
+            Complete digital solutions including web development, app design, branding, and digital marketing services.
+          </p>
+
+          <div class="wrapper">
+            <span class="span">Add:</span>
+
+            <address class="address">70-80 Upper St Norwich NR2</address>
+          </div>
+
+          <div class="wrapper">
+            <span class="span">Call:</span>
+
+            <a href="tel:+011234567890" class="footer-link">+01 123 4567 890</a>
+          </div>
+
+          <div class="wrapper">
+            <span class="span">Email:</span>
+
+            <a href="mailto:info@vectorweb.com" class="footer-link">info@vectorweb.com</a>
+          </div>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="h4 footer-list-title">Company</p>
+          </li>
+
+          <li>
+            <a href="index.html" class="footer-link">Home</a>
+          </li>
+
+          <li>
+            <a href="index.html#services" class="footer-link">Services</a>
+          </li>
+
+          <li>
+            <a href="portfolio.html" class="footer-link">Portfolio</a>
+          </li>
+
+          <li>
+            <a href="index.html#about" class="footer-link">About Us</a>
+          </li>
+
+          <li>
+            <a href="index.html#contact" class="footer-link">Contact</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="h4 footer-list-title">Our Services</p>
+          </li>
+
+          <li>
+            <a href="index.html#services" class="footer-link">Web Development</a>
+          </li>
+
+          <li>
+            <a href="index.html#services" class="footer-link">App Development</a>
+          </li>
+
+          <li>
+            <a href="index.html#services" class="footer-link">Branding & Logo</a>
+          </li>
+
+          <li>
+            <a href="index.html#services" class="footer-link">Digital Marketing</a>
+          </li>
+
+          <li>
+            <a href="index.html#services" class="footer-link">Digital Strategy</a>
+          </li>
+
+        </ul>
+
+        <div class="footer-list">
+
+          <p class="h4 footer-list-title">Contact Us</p>
+
+          <ul class="contact-list">
+
+            <li class="contact-item">
+
+              <div class="item-icon">
+                <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+              </div>
+
+              <address class="contact-info">
+                <span class="span">70-80 Upper St Norwich NR2</span>
+              </address>
+
+            </li>
+
+            <li class="contact-item">
+
+              <div class="item-icon">
+                <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+              </div>
+
+              <a href="tel:+011234567890" class="contact-info hover:underline">+01 123 4567 890</a>
+
+            </li>
+
+            <li class="contact-item">
+
+              <div class="item-icon">
+                <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+              </div>
+
+              <a href="mailto:info@vectorweb.com" class="contact-info hover:underline">info@vectorweb.com</a>
+
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2023 <a href="#" class="copyright-link">VectorWeb</a>. All Rights Reserved
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up-outline" aria-hidden="true"></ion-icon>
+  </a>
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+  
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+  <!-- 🔥 FIREBASE BACKEND -->
+  <script type="module">
+    /* Import Firebase SDKs */
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+    import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
+
+    /* Firebase Configuration */
+    const firebaseConfig = {
+      apiKey: "AIzaSyAAmBMuwRj6mjh3LBEmRPARRh0VaIrBmJk",
+      authDomain: "ectordeploy.firebaseapp.com",
+      databaseURL: "https://ectordeploy-default-rtdb.firebaseio.com",
+      projectId: "ectordeploy",
+      storageBucket: "ectordeploy.firebasestorage.app",
+      messagingSenderId: "43139715696",
+      appId: "1:43139715696:web:b56a3ce955218ccf019ab5",
+      measurementId: "G-SHKNHQZ5BR"
+    };
+
+    /* Initialize Firebase */
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const database = getDatabase(app);
+
+    /* Handle form submission */
+    document.getElementById('bookingForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const submitBtn = document.querySelector('.submit-btn-enhanced');
+      const responseDiv = document.getElementById('responseMessage');
+      
+      // Get form values
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const service = document.getElementById('service').value;
+      const budget = document.getElementById('budget').value;
+      const timeline = document.getElementById('timeline').value;
+      const message = document.getElementById('message').value.trim();
+      
+      // Validate required fields
+      if (!name || !email || !phone || !service || !budget || !timeline) {
+        responseDiv.innerHTML = '⚠️ Please fill all required fields.';
+        responseDiv.className = 'response-message-enhanced response-error';
+        return;
+      }
+      
+      // Disable submit button and show loading state
+      submitBtn.disabled = true;
+      submitBtn.querySelector('span').textContent = 'Submitting...';
+      
+      try {
+        const bookingRef = ref(database, 'bookings');
+        
+        await push(bookingRef, {
+          name,
+          email,
+          phone,
+          service,
+          budget,
+          timeline,
+          message,
+          createdAt: new Date().toISOString()
+        });
+        
+        // Success message
+        responseDiv.innerHTML = '✅ Booking submitted successfully! We will contact you shortly.';
+        responseDiv.className = 'response-message-enhanced response-success';
+        
+        // Reset form
+        document.getElementById('bookingForm').reset();
+      } catch (error) {
+        console.error('Error submitting booking:', error);
+        responseDiv.innerHTML = '❌ Failed to submit booking. Please try again.';
+        responseDiv.className = 'response-message-enhanced response-error';
+      } finally {
+        // Re-enable submit button
+        submitBtn.disabled = false;
+        submitBtn.querySelector('span').textContent = 'Submit Booking';
+      }
+    });
+  </script>
+
+</body>
+
+</html>

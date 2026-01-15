@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Project Booking | Web Development Company</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+}
+.container{
+    background:#ffffff;
+    width:100%;
+    max-width:420px;
+    padding:30px;
+    border-radius:14px;
+    box-shadow:0 20px 45px rgba(0,0,0,0.3);
+}
+h2{
+    text-align:center;
+    color:#2c5364;
+    margin-bottom:20px;
+}
+input, select, textarea, button{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-size:15px;
+}
+textarea{
+    resize:none;
+}
+button{
+    background:#2c5364;
+    color:#fff;
+    border:none;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+button:hover{
+    background:#1b3a4b;
+}
+.msg{
+    text-align:center;
+    font-size:14px;
+}
+.success{color:green;}
+.error{color:red;}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Book Your Project</h2>
+
+    <input type="text" id="name" placeholder="Full Name">
+    <input type="email" id="email" placeholder="Email Address">
+    <input type="tel" id="phone" placeholder="Phone Number">
+
+    <select id="service">
+        <option value="">Select Service</option>
+        <option>Website Development</option>
+        <option>Web Application</option>
+        <option>E-Commerce Website</option>
+        <option>UI / UX Design</option>
+        <option>Maintenance & Support</option>
+    </select>
+
+    <textarea id="message" rows="4" placeholder="Project Details (Optional)"></textarea>
+
+    <button onclick="submitBooking()">Submit Booking</button>
+
+    <div id="response" class="msg"></div>
+</div>
+
+<!-- 🔥 FIREBASE BACKEND -->
+<script type="module">
+  /* Import Firebase SDKs */
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+  import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-database.js";
+
+  /* Firebase Configuration */
+  const firebaseConfig = {
+    apiKey: "AIzaSyAAmBMuwRj6mjh3LBEmRPARRh0VaIrBmJk",
+    authDomain: "ectordeploy.firebaseapp.com",
+    databaseURL: "https://ectordeploy-default-rtdb.firebaseio.com",
+    projectId: "ectordeploy",
+    storageBucket: "ectordeploy.firebasestorage.app",
+    messagingSenderId: "43139715696",
+    appId: "1:43139715696:web:b56a3ce955218ccf019ab5",
+    measurementId: "G-SHKNHQZ5BR"
+  };
+
+  /* Initialize Firebase */
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const database = getDatabase(app);
+
+  /* Submit Booking Function */
+  window.submitBooking = function () {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const service = document.getElementById("service").value;
+    const message = document.getElementById("message").value.trim();
+    const response = document.getElementById("response");
+
+    if (!name || !email || !phone || !service) {
+      response.innerHTML = "⚠️ Please fill all required fields.";
+      response.className = "msg error";
+      return;
+    }
+
+    const bookingRef = ref(database, "bookings");
+
+    push(bookingRef, {
+      name,
+      email,
+      phone,
+      service,
+      message,
+      createdAt: new Date().toISOString()
+    })
+    .then(() => {
+      response.innerHTML = "✅ Booking submitted successfully!";
+      response.className = "msg success";
+      document.querySelectorAll("input, textarea, select").forEach(el => el.value = "");
+    })
+    .catch(error => {
+      console.error(error);
+      response.innerHTML = "❌ Failed to submit booking.";
+      response.className = "msg error";
+    });
+  };
+</script>
+
+</body>
+</html>

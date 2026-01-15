@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Templates & Services | VectorWeb Digital Agency</title>
+  <meta name="description" content="Professional web templates and services for all business needs - E-commerce, Business, Portfolio, Event, Personal, Membership, Nonprofit, Blog, Informational, Online Forum, Community, Startup, Consulting, Booking, Petition, School, Hobby, Interactive, Entertainment, Wedding, Travel, Directory, Landing Page, News and Magazine, Memorial, Subscription, Kid-friendly, Social Media websites">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Ion Icon -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <style>
+    /* Service-specific styles */
+    .template-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .template-card {
+      background: var(--white);
+      border-radius: var(--radius-10);
+      padding: 30px;
+      box-shadow: var(--shadow-2);
+      transition: all 0.3s ease;
+      border: 1px solid var(--platinum);
+      text-align: center;
+    }
+    
+    .template-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-4);
+      border-color: hsla(170, 75%, 41%, 0.3);
+    }
+    
+    .template-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--kappel), hsl(170, 75%, 35%));
+      border-radius: var(--radius-circle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: white;
+      font-size: 30px;
+    }
+    
+    .template-card h3 {
+      color: var(--eerie-black-1);
+      margin-bottom: 15px;
+      font-size: var(--fs-4);
+    }
+    
+    .template-card p {
+      color: var(--gray-web);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    
+    .price-tag {
+      display: block;
+      background: hsla(170, 75%, 41%, 0.1);
+      color: var(--kappel);
+      padding: 5px 15px;
+      border-radius: var(--radius-10);
+      font-weight: var(--fw-600);
+      margin-top: 15px;
+    }
+    
+    .cta-section {
+      background: linear-gradient(135deg, var(--kappel), hsl(170, 75%, 35%));
+      padding: 80px 20px;
+      text-align: center;
+      margin: 80px 0;
+      border-radius: var(--radius-10);
+    }
+    
+    .cta-section h2 {
+      color: var(--white);
+      font-size: var(--fs-2);
+      margin-bottom: 20px;
+    }
+    
+    .cta-section p {
+      color: var(--white);
+      font-size: var(--fs-5);
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+    
+    .features-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 60px 0;
+    }
+    
+    .feature-card {
+      text-align: center;
+      padding: 30px;
+    }
+    
+    .feature-card h3 {
+      color: var(--kappel);
+      margin: 20px 0 15px;
+    }
+    
+    .process-section {
+      background: var(--isabelline);
+      padding: 60px 20px;
+      border-radius: var(--radius-10);
+      margin: 60px 0;
+    }
+    
+    .process-steps {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      position: relative;
+    }
+    
+    .step {
+      text-align: center;
+      width: calc(100% / 4 - 20px);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .step-number {
+      width: 50px;
+      height: 50px;
+      background: var(--kappel);
+      color: white;
+      border-radius: var(--radius-circle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      font-weight: var(--fw-700);
+    }
+    
+    @media (max-width: 768px) {
+      .step {
+        width: calc(100% / 2 - 10px);
+        margin-bottom: 40px;
+      }
+      
+      .template-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .step {
+        width: 100%;
+      }
+      
+      .template-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        <img src="webikit4.png" width="120" height="36" alt="VectorWeb logo">
+      </a>
+      
+      <div class="header-center-text">
+        <span class="vector-text">VECTOR</span>
+      </div>
+
+      <nav class="navbar" data-navbar>
+        <div class="wrapper">
+          <a href="index.html" class="logo">
+            <img src="webikit4.png" width="80" height="24" alt="VectorWeb logo">
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link">Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="index.html#services" class="navbar-link">Services</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="portfolio.html" class="navbar-link">Portfolio</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="index.html#about" class="navbar-link">About</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="index.html#contact" class="navbar-link">Contact</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="booking.html" class="navbar-link">Book Now</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+      <div class="header-actions">
+
+        <div class="search-container">
+          <button class="header-action-btn" aria-label="toggle search" title="Search" id="searchToggle">
+            <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+          </button>
+          <div class="search-box" id="searchBox">
+            <input type="text" id="searchInput" placeholder="Search services...">
+            <ul class="search-suggestions" id="searchSuggestions">
+              <li data-search="app development">App Development</li>
+              <li data-search="web development">Web Development</li>
+              <li data-search="logo design">Logo Design</li>
+              <li data-search="digital marketing">Digital Marketing</li>
+              <li data-search="social media">Social Media Handling</li>
+            </ul>
+          </div>
+        </div>
+
+
+        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+      </div>
+
+    </div>
+  </header>
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #SERVICE INTRO
+      -->
+
+      <section class="section" style="padding: 80px 0;">
+        <div class="container">
+          
+          <div class="intro-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+            
+            <h1 class="h1 section-title">Professional Web Templates & Services</h1>
+            
+            <p class="section-text">
+              Choose from our extensive collection of professionally designed web templates tailored for your specific business needs. Each template is customizable, responsive, and optimized for performance.
+            </p>
+            
+          </div>
+          
+        </div>
+      </section>
+
+      <!-- 
+        - #TEMPLATES GRID
+      -->
+
+      <section class="section" style="padding: 40px 0;">
+        <div class="container">
+          
+          <h2 class="h2 section-title" style="text-align: center; margin-bottom: 20px;">Our Web Templates</h2>
+          <p class="section-text" style="text-align: center; max-width: 600px; margin: 0 auto 50px;">
+            Browse our diverse collection of specialized web templates
+          </p>
+          
+          <div class="template-grid">
+            
+            <!-- E-commerce Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="cart-outline"></ion-icon>
+              </div>
+              <h3>E-commerce Website</h3>
+              <p>Professional online store with shopping cart, payment integration, and inventory management.</p>
+              <span class="price-tag">Starting at ₹15,000</span>
+            </div>
+            
+            <!-- Business Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="business-outline"></ion-icon>
+              </div>
+              <h3>Business Website</h3>
+              <p>Clean, professional design for corporate businesses with contact forms and service showcases.</p>
+              <span class="price-tag">Starting at ₹12,000</span>
+            </div>
+            
+            <!-- Portfolio Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="briefcase-outline"></ion-icon>
+              </div>
+              <h3>Portfolio Website</h3>
+              <p>Showcase your work with stunning galleries and creative layouts for artists and professionals.</p>
+              <span class="price-tag">Starting at ₹10,000</span>
+            </div>
+            
+            <!-- Event Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </div>
+              <h3>Event Website</h3>
+              <p>Promote events with countdown timers, registration forms, and schedule management.</p>
+              <span class="price-tag">Starting at ₹8,000</span>
+            </div>
+            
+            <!-- Personal Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="person-outline"></ion-icon>
+              </div>
+              <h3>Personal Website</h3>
+              <p>Personal branding site with bio, contact info, and social media integration.</p>
+              <span class="price-tag">Starting at ₹7,000</span>
+            </div>
+            
+            <!-- Membership Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="people-outline"></ion-icon>
+              </div>
+              <h3>Membership Website</h3>
+              <p>Member-only content areas with subscription management and exclusive access.</p>
+              <span class="price-tag">Starting at ₹18,000</span>
+            </div>
+            
+            <!-- Nonprofit Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="heart-outline"></ion-icon>
+              </div>
+              <h3>Nonprofit Website</h3>
+              <p>Donation platforms and volunteer management for charitable organizations.</p>
+              <span class="price-tag">Starting at ₹10,000</span>
+            </div>
+            
+            <!-- Blog Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="newspaper-outline"></ion-icon>
+              </div>
+              <h3>Blog Website</h3>
+              <p>Content management system optimized for publishing articles and reader engagement.</p>
+              <span class="price-tag">Starting at ₹9,000</span>
+            </div>
+            
+            <!-- Informational Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="information-circle-outline"></ion-icon>
+              </div>
+              <h3>Informational Website</h3>
+              <p>Knowledge-based sites with organized content sections and search functionality.</p>
+              <span class="price-tag">Starting at ₹8,000</span>
+            </div>
+            
+            <!-- Online Forum -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="chatbubbles-outline"></ion-icon>
+              </div>
+              <h3>Online Forum</h3>
+              <p>Community discussion platform with user profiles and topic management.</p>
+              <span class="price-tag">Starting at ₹20,000</span>
+            </div>
+            
+            <!-- Community Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="globe-outline"></ion-icon>
+              </div>
+              <h3>Community Website</h3>
+              <p>Social networking features with user-generated content and group management.</p>
+              <span class="price-tag">Starting at ₹22,000</span>
+            </div>
+            
+            <!-- Startup Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="rocket-outline"></ion-icon>
+              </div>
+              <h3>Startup Website</h3>
+              <p>Modern design for tech startups with investor information and product showcases.</p>
+              <span class="price-tag">Starting at ₹12,000</span>
+            </div>
+            
+            <!-- Consulting Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="help-circle-outline"></ion-icon>
+              </div>
+              <h3>Consulting Website</h3>
+              <p>Professional services site with appointment booking and expertise showcases.</p>
+              <span class="price-tag">Starting at ₹10,000</span>
+            </div>
+            
+            <!-- Booking Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="time-outline"></ion-icon>
+              </div>
+              <h3>Booking Website</h3>
+              <p>Reservation system with calendar integration and automated confirmations.</p>
+              <span class="price-tag">Starting at ₹15,000</span>
+            </div>
+            
+            <!-- Petition Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="document-text-outline"></ion-icon>
+              </div>
+              <h3>Petition Website</h3>
+              <p>Campaign platforms with signature collection and social sharing features.</p>
+              <span class="price-tag">Starting at ₹8,000</span>
+            </div>
+            
+            <!-- School Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="school-outline"></ion-icon>
+              </div>
+              <h3>School Website</h3>
+              <p>Educational institution sites with grade books, event calendars, and parent portals.</p>
+              <span class="price-tag">Starting at ₹14,000</span>
+            </div>
+            
+            <!-- Hobby Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="color-palette-outline"></ion-icon>
+              </div>
+              <h3>Hobby Website</h3>
+              <p>Interest-focused communities with galleries and event organization.</p>
+              <span class="price-tag">Starting at ₹9,000</span>
+            </div>
+            
+            <!-- Interactive Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="game-controller-outline"></ion-icon>
+              </div>
+              <h3>Interactive Website</h3>
+              <p>Engaging sites with games, quizzes, and multimedia experiences.</p>
+              <span class="price-tag">Starting at ₹18,000</span>
+            </div>
+            
+            <!-- Entertainment Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="musical-note-outline"></ion-icon>
+              </div>
+              <h3>Entertainment Website</h3>
+              <p>Media-rich platforms for content creators and entertainment businesses.</p>
+              <span class="price-tag">Starting at ₹16,000</span>
+            </div>
+            
+            <!-- Wedding Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="rose-outline"></ion-icon>
+              </div>
+              <h3>Wedding Website</h3>
+              <p>Romantic designs with RSVP forms, photo galleries, and event details.</p>
+              <span class="price-tag">Starting at ₹7,000</span>
+            </div>
+            
+            <!-- Travel Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="airplane-outline"></ion-icon>
+              </div>
+              <h3>Travel Website</h3>
+              <p>Travel agency sites with booking systems and destination showcases.</p>
+              <span class="price-tag">Starting at ₹15,000</span>
+            </div>
+            
+            <!-- Directory Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="list-outline"></ion-icon>
+              </div>
+              <h3>Directory Website</h3>
+              <p>Business listings with search filters and rating systems.</p>
+              <span class="price-tag">Starting at ₹13,000</span>
+            </div>
+            
+            <!-- Landing Page Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="arrow-down-outline"></ion-icon>
+              </div>
+              <h3>Landing Page Website</h3>
+              <p>Conversion-optimized pages for marketing campaigns and product launches.</p>
+              <span class="price-tag">Starting at ₹6,000</span>
+            </div>
+            
+            <!-- News and Magazine Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="newspaper-outline"></ion-icon>
+              </div>
+              <h3>News & Magazine</h3>
+              <p>Editorial sites with article management and breaking news features.</p>
+              <span class="price-tag">Starting at ₹17,000</span>
+            </div>
+            
+            <!-- Memorial Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="albums-outline"></ion-icon>
+              </div>
+              <h3>Memorial Website</h3>
+              <p>Digital tributes with photo galleries and guestbook functionality.</p>
+              <span class="price-tag">Starting at ₹8,000</span>
+            </div>
+            
+            <!-- Subscription Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="card-outline"></ion-icon>
+              </div>
+              <h3>Subscription Website</h3>
+              <p>Recurring payment platforms with membership tiers and billing management.</p>
+              <span class="price-tag">Starting at ₹20,000</span>
+            </div>
+            
+            <!-- Kid-friendly Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="happy-outline"></ion-icon>
+              </div>
+              <h3>Kid-friendly Website</h3>
+              <p>Safe, colorful designs for children's educational and entertainment sites.</p>
+              <span class="price-tag">Starting at ₹10,000</span>
+            </div>
+            
+            <!-- Social Media Website -->
+            <div class="template-card">
+              <div class="template-icon">
+                <ion-icon name="share-social-outline"></ion-icon>
+              </div>
+              <h3>Social Media Website</h3>
+              <p>Custom social networks with user profiles, feeds, and messaging.</p>
+              <span class="price-tag">Starting at ₹25,000</span>
+            </div>
+            
+          </div>
+          
+        </div>
+      </section>
+
+      <!-- 
+        - #FEATURES SECTION
+      -->
+
+      <section class="features-section" style="padding: 60px 0;">
+        <div class="container">
+          
+          <h2 class="h2 section-title" style="text-align: center; margin-bottom: 20px;">Why Choose Our Templates</h2>
+          <p class="section-text" style="text-align: center; max-width: 600px; margin: 0 auto 50px;">
+            Benefits of using our professional web templates
+          </p>
+          
+          <div class="features-list">
+            
+            <div class="feature-card">
+              <div class="template-icon">
+                <ion-icon name="speedometer-outline"></ion-icon>
+              </div>
+              <h3>Fast Loading</h3>
+              <p>All templates are optimized for speed and performance</p>
+            </div>
+            
+            <div class="feature-card">
+              <div class="template-icon">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
+              <h3>Fully Responsive</h3>
+              <p>Looks great on all devices from mobile to desktop</p>
+            </div>
+            
+            <div class="feature-card">
+              <div class="template-icon">
+                <ion-icon name="shield-checkmark-outline"></ion-icon>
+              </div>
+              <h3>Secure & Reliable</h3>
+              <p>Built with security best practices and reliable hosting</p>
+            </div>
+            
+            <div class="feature-card">
+              <div class="template-icon">
+                <ion-icon name="refresh-outline"></ion-icon>
+              </div>
+              <h3>Easy Updates</h3>
+              <p>Simple content management and regular updates</p>
+            </div>
+            
+          </div>
+          
+        </div>
+      </section>
+
+      <!-- 
+        - #CTA SECTION
+      -->
+
+      <section class="cta-section">
+        <div class="container">
+          <h2>Ready to Get Started?</h2>
+          <p>Choose your perfect web template today and launch your online presence with our professional solutions.</p>
+          <a href="booking.html" class="btn" style="display: inline-block; margin-top: 20px;">
+            <span>Book Your Template Now</span>
+            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+          </a>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer" style="background-image: url('./assets/images/footer-bg.png')">
+
+    <div class="footer-top section">
+      <div class="container grid-list">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo-light.svg" width="162" height="50" alt="VectorWeb logo">
+          </a>
+
+          <p class="footer-brand-text">
+            Complete digital solutions including web development, app design, branding, and digital marketing services.
+          </p>
+
+          <div class="wrapper">
+            <span class="span">Add:</span>
+
+            <address class="address">70-80 Upper St Norwich NR2</address>
+          </div>
+
+          <div class="wrapper">
+            <span class="span">Call:</span>
+
+            <a href="tel:+011234567890" class="footer-link">+01 123 4567 890</a>
+          </div>
+
+          <div class="wrapper">
+            <span class="span">Email:</span>
+
+            <a href="mailto:info@vectorweb.com" class="footer-link">info@vectorweb.com</a>
+          </div>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="h4 footer-list-title">Company</p>
+          </li>
+
+          <li>
+            <a href="index.html" class="footer-link">Home</a>
+          </li>
+
+          <li>
+            <a href="index.html#services" class="footer-link">Services</a>
+          </li>
+
+          <li>
+            <a href="portfolio.html" class="footer-link">Portfolio</a>
+          </li>
+
+          <li>
+            <a href="index.html#about" class="footer-link">About Us</a>
+          </li>
+
+          <li>
+            <a href="index.html#contact" class="footer-link">Contact</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="h4 footer-list-title">Our Services</p>
+          </li>
+
+          <li>
+            <a href="index.html#services" class="footer-link">Web Development</a>
+          </li>
+
+          <li>
+            <a href="index.html#services" class="footer-link">App Development</a>
+          </li>
+
+          <li>
+            <a href="index.html#services" class="footer-link">Branding & Logo</a>
+          </li>
+
+          <li>
+            <a href="index.html#services" class="footer-link">Digital Marketing</a>
+          </li>
+
+          <li>
+            <a href="index.html#services" class="footer-link">Digital Strategy</a>
+          </li>
+
+        </ul>
+
+        <div class="footer-list">
+
+          <p class="h4 footer-list-title">Contact Us</p>
+
+          <ul class="contact-list">
+
+            <li class="contact-item">
+
+              <div class="item-icon">
+                <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+              </div>
+
+              <address class="contact-info">
+                <span class="span">70-80 Upper St Norwich NR2</span>
+              </address>
+
+            </li>
+
+            <li class="contact-item">
+
+              <div class="item-icon">
+                <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+              </div>
+
+              <a href="tel:+011234567890" class="contact-info hover:underline">+01 123 4567 890</a>
+
+            </li>
+
+            <li class="contact-item">
+
+              <div class="item-icon">
+                <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+              </div>
+
+              <a href="mailto:info@vectorweb.com" class="contact-info hover:underline">info@vectorweb.com</a>
+
+            </li>
+
+          </ul>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          &copy; 2023 <a href="#" class="copyright-link">VectorWeb</a>. All Rights Reserved
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="chevron-up-outline" aria-hidden="true"></ion-icon>
+  </a>
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+  
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

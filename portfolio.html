@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | VectorWeb Digital Agency</title>
+  <meta name="description" content="Explore our portfolio of web development, mobile app design, branding, logo creation, and digital marketing projects at VectorWeb.">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Ion Icon -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/portfolio.css">
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        <img src="webikit4.png" width="120" height="36" alt="VectorWeb logo">
+      </a>
+      
+      <div class="header-center-text">
+        <span class="vector-text">VECTOR</span>
+      </div>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="wrapper">
+          <a href="index.html" class="logo">
+            <img src="webikit4.png" width="80" height="24" alt="VectorWeb logo">
+          </a>
+          
+          <div class="mobile-header-center">
+            <span class="vector-text">VECTOR</span>
+          </div>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link" data-nav-link>About</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="index.html#services" class="navbar-link" data-nav-link>Services</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="portfolio.html" class="navbar-link" data-nav-link>Portfolio</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link" data-nav-link>Contact</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <div class="header-actions">
+
+        <div class="search-container">
+          <button class="header-action-btn" aria-label="toggle search" title="Search" id="searchToggle">
+            <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+          </button>
+          <div class="search-box" id="searchBox">
+            <input type="text" id="searchInput" placeholder="Search services...">
+            <ul class="search-suggestions" id="searchSuggestions">
+              <li data-search="app development">App Development</li>
+              <li data-search="web development">Web Development</li>
+              <li data-search="logo design">Logo Design</li>
+              <li data-search="digital marketing">Digital Marketing</li>
+              <li data-search="social media">Social Media Handling</li>
+            </ul>
+            <div class="vector-below-search">
+              <span class="vector-text">Vector</span>
+            </div>
+          </div>
+        </div>
+
+
+        <a href="booking.html" class="btn has-before">
+          <span class="span">Get Started</span>
+
+          <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+        </a>
+
+        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #PORTFOLIO
+      -->
+
+      <section class="section portfolio" aria-label="portfolio">
+        <div class="container">
+
+          <p class="section-subtitle">Industry Solutions</p>
+
+          <h2 class="h2 section-title">
+            Industry-Specific <span class="span">Roadmap</span> Projects
+          </h2>
+
+          <p class="section-text">
+            Explore our comprehensive portfolio showcasing specialized solutions across diverse industries.
+          </p>
+
+          <div class="roadmap-container">
+            <div class="roadmap-line"></div>
+            
+            <!-- Decorative floating elements -->
+            <div class="floating-element float-1"></div>
+            <div class="floating-element float-2"></div>
+            <div class="floating-element float-3"></div>
+            
+            <div class="roadmap-item" data-animate>
+              <div class="roadmap-marker"></div>
+              <div class="portfolio-card">
+                <div class="card-number">01</div>
+                <figure class="card-banner">
+                  <img src="./assets/images/portfolio-1.jpg" width="800" height="550" loading="lazy"
+                    alt="ERP system for manufacturing company" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <div class="card-tags">
+                    <span class="badge">ERP System</span>
+                    <span class="badge">Web Development</span>
+                  </div>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Manufacturing ERP Solution</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Custom enterprise resource planning system designed for streamlining manufacturing operations, inventory management, and supply chain processes.
+                  </p>
+
+                  <a href="#" class="btn-text">
+                    View Case Study
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="roadmap-item" data-animate>
+              <div class="roadmap-marker"></div>
+              <div class="portfolio-card">
+                <div class="card-number">02</div>
+                <figure class="card-banner">
+                  <img src="./assets/images/portfolio-2.jpg" width="800" height="550" loading="lazy"
+                    alt="E-commerce platform for retail business" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <div class="card-tags">
+                    <span class="badge">E-commerce</span>
+                    <span class="badge">Retail</span>
+                  </div>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Multi-Vendor E-commerce Platform</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Scalable online marketplace solution with vendor management, payment processing, and advanced product catalog features.
+                  </p>
+
+                  <a href="#" class="btn-text">
+                    View Case Study
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="roadmap-item" data-animate>
+              <div class="roadmap-marker"></div>
+              <div class="portfolio-card">
+                <div class="card-number">03</div>
+                <figure class="card-banner">
+                  <img src="./assets/images/portfolio-3.jpg" width="800" height="550" loading="lazy"
+                    alt="Travel booking system" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <div class="card-tags">
+                    <span class="badge">Travel</span>
+                    <span class="badge">Booking System</span>
+                  </div>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Travel & Tourism Platform</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Complete travel booking solution with flight reservations, hotel bookings, car rentals, and itinerary management.
+                  </p>
+
+                  <a href="#" class="btn-text">
+                    View Case Study
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="roadmap-item" data-animate>
+              <div class="roadmap-marker"></div>
+              <div class="portfolio-card">
+                <div class="card-number">04</div>
+                <figure class="card-banner">
+                  <img src="./assets/images/portfolio-4.jpg" width="800" height="550" loading="lazy"
+                    alt="Perfume and cosmetics e-commerce" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <div class="card-tags">
+                    <span class="badge">Beauty</span>
+                    <span class="badge">E-commerce</span>
+                  </div>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Luxury Perfume & Cosmetics Store</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Premium beauty e-commerce platform with AR try-on features, personalized recommendations, and subscription services.
+                  </p>
+
+                  <a href="#" class="btn-text">
+                    View Case Study
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="roadmap-item" data-animate>
+              <div class="roadmap-marker"></div>
+              <div class="portfolio-card">
+                <div class="card-number">05</div>
+                <figure class="card-banner">
+                  <img src="./assets/images/portfolio-5.jpg" width="800" height="550" loading="lazy"
+                    alt="Skincare products marketplace" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <div class="card-tags">
+                    <span class="badge">Skincare</span>
+                    <span class="badge">Marketplace</span>
+                  </div>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Skin Care Solutions Marketplace</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Comprehensive skincare platform with dermatologist consultations, personalized product recommendations, and skin analysis tools.
+                  </p>
+
+                  <a href="#" class="btn-text">
+                    View Case Study
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="roadmap-item" data-animate>
+              <div class="roadmap-marker"></div>
+              <div class="portfolio-card">
+                <div class="card-number">06</div>
+                <figure class="card-banner">
+                  <img src="./assets/images/portfolio-6.jpg" width="800" height="550" loading="lazy"
+                    alt="Education learning management system" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+                  <div class="card-tags">
+                    <span class="badge">Education</span>
+                    <span class="badge">LMS</span>
+                  </div>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Online Learning Platform</a>
+                  </h3>
+
+                  <p class="card-text">
+                    Advanced learning management system with course creation tools, student tracking, certification, and interactive content delivery.
+                  </p>
+
+                  <a href="#" class="btn-text">
+                    View Case Study
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #COUNTER
+      -->
+
+      <section class="section counter" aria-label="counter">
+        <div class="container">
+
+          <ul class="grid-list">
+
+            <li class="counter-card">
+              <img src="./assets/images/counter-1.svg" width="80" height="80" loading="lazy" alt="Projects Completed">
+              <data class="title-large" value="500">500+</data>
+              <p class="label-lg">Projects Completed</p>
+            </li>
+
+            <li class="counter-card">
+              <img src="./assets/images/counter-2.svg" width="80" height="80" loading="lazy" alt="Happy Clients">
+              <data class="title-large" value="250">250+</data>
+              <p class="label-lg">Happy Clients</p>
+            </li>
+
+            <li class="counter-card">
+              <img src="./assets/images/counter-3.svg" width="80" height="80" loading="lazy" alt="Expert Team">
+              <data class="title-large" value="35">35+</data>
+              <p class="label-lg">Expert Team</p>
+            </li>
+
+            <li class="counter-card">
+              <img src="./assets/images/counter-4.svg" width="80" height="80" loading="lazy" alt="Awards Won">
+              <data class="title-large" value="50">50+</data>
+              <p class="label-lg">Awards Won</p>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer" style="background-image: url('./assets/images/footer-bg.png')">
+
+    <div class="footer-top section">
+      <div class="container grid-list">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="logovector1.png" width="100" height="30" alt="VectorWeb logo">
+          </a>
+
+          <p class="footer-brand-text">
+            Complete digital solutions including web development, app design, branding, and digital marketing services.
+          </p>
+
+          <div class="wrapper">
+            <span class="span">Add:</span>
+
+            <address class="address">70-80 Upper St Norwich NR2</address>
+          </div>
+
+          <div class="wrapper">
+            <span class="span">Call:</span>
+
+            <a href="tel:+011234567890" class="footer-link">+01 123 4567 890</a>
+          </div>
+
+          <div class="wrapper">
+            <span class="span">Email:</span>
+
+            <a href="mailto:info@vectorweb.com" class="footer-link">info@vectorweb.com</a>
+          </div>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="h4 footer-list-title">Services</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">About</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Web Development</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">App Development</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Branding & Logo</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Digital Marketing</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Consultation</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="h4 footer-list-title">Company</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Contact Us</a>
+          </li>
+
+          <li>
+            <a href="portfolio.html" class="footer-link">Our Work</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Case Studies</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">FAQ's</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Careers</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Privacy Policy</a>
+          </li>
+
+        </ul>
+
+        <div class="footer-list">
+
+          <p class="footer-list-title">Contacts</p>
+
+          <p class="footer-list-text">
+            Subscribe to our newsletter for the latest updates and offers
+          </p>
+
+          <form action="" class="newsletter-form">
+            <input type="email" name="email_address" placeholder="Your email" required class="input-field">
+
+            <button type="submit" class="btn has-before">
+              <span class="span">Subscribe</span>
+
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </button>
+          </form>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          Copyright 2023 All Rights Reserved by <a href="#" class="copyright-link">VectorWeb</a>
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #GO TO TOP
+  -->
+
+  <a href="#top" class="go-top active" aria-label="go to top">
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <script>
+    // Roadmap animation on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+      const roadmapItems = document.querySelectorAll('[data-animate]');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+      
+      roadmapItems.forEach(item => {
+        observer.observe(item);
+      });
+    });
+  </script>
+
+</body>
+
+</html>

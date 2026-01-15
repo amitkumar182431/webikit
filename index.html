@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tag
+  -->
+  <title>VectorWeb - Complete Digital Solutions | Web, App & Marketing</title>
+  <meta name="title" content="VectorWeb - Web Development, App Design, Branding & Digital Marketing Experts">
+  <meta name="description" content="Complete digital solutions including web development, mobile app development, branding, logo design, and digital marketing services">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800&family=Poppins:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-bg.svg">
+  <link rel="preload" as="image" href="./assets/images/hero-banner-1.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-banner-2.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-shape-1.svg">
+  <link rel="preload" as="image" href="./assets/images/hero-shape-2.png">
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="webikit4.png" width="120" height="36" alt="VectorWeb logo">
+      </a>
+<!--       
+      <div class="header-center-text">
+        <span class="vector-text">VECTOR</span>
+      </div> -->
+
+      <nav class="navbar" data-navbar>
+
+        <div class="wrapper">
+          <a href="#" class="logo">
+            <img src="webikit4.png" width="80" height="24" alt="VectorWeb logo">
+          </a>
+          
+          <div class="mobile-header-center">
+            <span class="vector-text">Vector</span>
+          </div>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="#about" class="navbar-link" data-nav-link>About</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#services" class="navbar-link" data-nav-link>Services</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#home" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="portfolio.html" class="navbar-link" data-nav-link>Portfolio</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="navbar-link" data-nav-link>Contact</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <div class="header-actions">
+
+        <div class="search-container">
+          <button class="header-action-btn" aria-label="toggle search" title="Search" id="searchToggle">
+            <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+          </button>
+          <div class="search-box" id="searchBox">
+            <input type="text" id="searchInput" placeholder="Search services...">
+            <ul class="search-suggestions" id="searchSuggestions">
+              <li data-search="app development">App Development</li>
+              <li data-search="web development">Web Development</li>
+              <li data-search="logo design">Logo Design</li>
+              <li data-search="digital marketing">Digital Marketing</li>
+              <li data-search="social media">Social Media Handling</li>
+            </ul>
+            <div class="vector-below-search">
+              <span class="vector-text">Vector</span>
+            </div>
+          </div>
+        </div>
+
+
+
+        <a href="#" class="btn has-before">
+          <span class="span">Get Started</span>
+
+          <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+        </a>
+
+        <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+          <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero has-bg-image" id="home" aria-label="home"
+        style="background-image: url('./assets/images/hero-bg.svg')">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <h1 class="h1 section-title">
+              Complete <span class="span">Digital Solutions</span> for Your Business
+            </h1>
+
+            <p class="hero-text">
+              Expert web development, mobile app design, branding, logo creation, and digital marketing services tailored to grow your business.
+            </p>
+
+            <a href="#" class="btn has-before">
+              <span class="span">Explore Services</span>
+
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </a>
+
+          </div>
+
+          <figure class="hero-banner">
+
+            <div class="img-holder one" style="--width: 270; --height: 300;">
+              <img src="./assets/images/hero-banner-1.jpg" width="270" height="300" alt="hero banner" class="img-cover">
+            </div>
+
+            <div class="img-holder two" style="--width: 240; --height: 370;">
+              <img src="./assets/images/hero-banner-2.jpg" width="240" height="370" alt="hero banner" class="img-cover">
+            </div>
+
+            <img src="./assets/images/hero-shape-1.svg" width="380" height="190" alt="" class="shape hero-shape-1">
+
+            <img src="./assets/images/hero-shape-2.png" width="622" height="551" alt="" class="shape hero-shape-2">
+
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #CATEGORY
+      -->
+
+      <section class="section category" aria-label="category">
+        <div class="container">
+
+          <p class="section-subtitle">Vector Providing Structure</p>
+
+          <h2 class="h2 section-title">
+            Comprehensive <span class="span">Digital</span> Services for Growth.
+          </h2>
+
+          <p class="section-text">
+            Complete digital solutions including web, app, design, branding, and marketing services.
+          </p>
+
+          <!-- Services Connection Graph -->
+          <div class="services-graph">
+            <div class="graph-node central-node">Complete Digital Solution</div>
+            
+            <div class="graph-node web-dev">Web Development</div>
+            <div class="graph-node app-dev">App Development</div>
+            <div class="graph-node branding">Branding & Logo</div>
+            <div class="graph-node marketing">Digital Marketing</div>
+            <div class="graph-node strategy">Digital Strategy</div>
+            
+            <div class="connections">
+              <div class="connection"></div>
+              <div class="connection"></div>
+              <div class="connection"></div>
+              <div class="connection"></div>
+              <div class="connection"></div>
+            </div>
+          </div>
+          
+          <div class="section-text" style="text-align: center; margin: 20px 0 40px;">
+            Our services work together to create comprehensive digital solutions for your business
+          </div>
+          
+          <div class="services-container">
+            <div class="service-grid" style="justify-content: flex-start; gap: 25px;">
+              <div class="category-card enhanced-card" style="--color: 170, 75%, 41%; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <div class="card-icon" style="position: relative;">
+                  <img src="./assets/images/category-1.svg" width="60" height="60" loading="lazy"
+                    alt="Professional Web Development Services" class="img">
+                  <div class="card-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle, transparent, hsla(170, 75%, 41%, 0.2)); border-radius: 50%; opacity: 0; transition: opacity 0.3s ease;"></div>
+                </div>
+                <h3 class="h3">
+                  <a href="#" class="card-title" style="font-size: var(--fs-4);">Web Development</a>
+                </h3>
+                <p class="card-text" style="font-size: var(--fs-6); line-height: 1.6;">
+                  Custom websites and web applications built with modern technologies.
+                </p>
+                <span class="card-badge" style="margin-bottom: 15px; display: inline-block; background: hsla(170, 75%, 41%, 0.1); color: hsl(170, 75%, 41%); padding: 5px 12px; border-radius: 20px; font-size: var(--fs-7);">50+ Projects</span>
+                <a href="booking.html" class="btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; text-decoration: none; border-radius: var(--radius-5); background: linear-gradient(135deg, hsl(170, 75%, 41%), hsl(170, 75%, 30%)); color: white; font-weight: var(--fw-600); transition: all 0.3s ease;">
+                  <ion-icon name="flash-outline" style="font-size: 18px;"></ion-icon>
+                  <span>Book Now</span>
+                </a>
+              </div>
+              
+              <div class="category-card enhanced-card" style="--color: 351, 83%, 61%; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <div class="card-icon" style="position: relative;">
+                  <img src="./assets/images/category-2.svg" width="60" height="60" loading="lazy"
+                    alt="Cross-Platform App Development" class="img">
+                  <div class="card-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle, transparent, hsla(351, 83%, 61%, 0.2)); border-radius: 50%; opacity: 0; transition: opacity 0.3s ease;"></div>
+                </div>
+                <h3 class="h3">
+                  <a href="#" class="card-title" style="font-size: var(--fs-4);">App Development</a>
+                </h3>
+                <p class="card-text" style="font-size: var(--fs-6); line-height: 1.6;">
+                  Native and cross-platform mobile applications for iOS and Android.
+                </p>
+                <span class="card-badge" style="margin-bottom: 15px; display: inline-block; background: hsla(351, 83%, 61%, 0.1); color: hsl(351, 83%, 61%); padding: 5px 12px; border-radius: 20px; font-size: var(--fs-7);">30+ Projects</span>
+                <a href="booking.html" class="btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; text-decoration: none; border-radius: var(--radius-5); background: linear-gradient(135deg, hsl(351, 83%, 61%), hsl(351, 83%, 50%)); color: white; font-weight: var(--fw-600); transition: all 0.3s ease;">
+                  <ion-icon name="flash-outline" style="font-size: 18px;"></ion-icon>
+                  <span>Book Now</span>
+                </a>
+              </div>
+              
+              <div class="category-card enhanced-card" style="--color: 229, 75%, 58%; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <div class="card-icon" style="position: relative;">
+                  <img src="./assets/images/category-3.svg" width="60" height="60" loading="lazy"
+                    alt="Complete Branding & Logo Design" class="img">
+                  <div class="card-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle, transparent, hsla(229, 75%, 58%, 0.2)); border-radius: 50%; opacity: 0; transition: opacity 0.3s ease;"></div>
+                </div>
+                <h3 class="h3">
+                  <a href="#" class="card-title" style="font-size: var(--fs-4);">Branding & Logo</a>
+                </h3>
+                <p class="card-text" style="font-size: var(--fs-6); line-height: 1.6;">
+                  Complete brand identity solutions including logos and visual systems.
+                </p>
+                <span class="card-badge" style="margin-bottom: 15px; display: inline-block; background: hsla(229, 75%, 58%, 0.1); color: hsl(229, 75%, 58%); padding: 5px 12px; border-radius: 20px; font-size: var(--fs-7);">40+ Projects</span>
+                <a href="booking.html" class="btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; text-decoration: none; border-radius: var(--radius-5); background: linear-gradient(135deg, hsl(229, 75%, 58%), hsl(229, 75%, 45%)); color: white; font-weight: var(--fw-600); transition: all 0.3s ease;">
+                  <ion-icon name="flash-outline" style="font-size: 18px;"></ion-icon>
+                  <span>Book Now</span>
+                </a>
+              </div>
+              
+              <div class="category-card enhanced-card" style="--color: 42, 94%, 55%; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <div class="card-icon" style="position: relative;">
+                  <img src="./assets/images/category-4.svg" width="60" height="60" loading="lazy"
+                    alt="Strategic Digital Marketing" class="img">
+                  <div class="card-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle, transparent, hsla(42, 94%, 55%, 0.2)); border-radius: 50%; opacity: 0; transition: opacity 0.3s ease;"></div>
+                </div>
+                <h3 class="h3">
+                  <a href="#" class="card-title" style="font-size: var(--fs-4);">Digital Marketing</a>
+                </h3>
+                <p class="card-text" style="font-size: var(--fs-6); line-height: 1.6;">
+                  Strategic marketing campaigns to grow your online presence.
+                </p>
+                <span class="card-badge" style="margin-bottom: 15px; display: inline-block; background: hsla(42, 94%, 55%, 0.1); color: hsl(42, 94%, 55%); padding: 5px 12px; border-radius: 20px; font-size: var(--fs-7);">200+ Campaigns</span>
+                <a href="booking.html" class="btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; text-decoration: none; border-radius: var(--radius-5); background: linear-gradient(135deg, hsl(42, 94%, 55%), hsl(42, 94%, 40%)); color: white; font-weight: var(--fw-600); transition: all 0.3s ease;">
+                  <ion-icon name="flash-outline" style="font-size: 18px;"></ion-icon>
+                  <span>Book Now</span>
+                </a>
+              </div>
+              
+              <div class="category-card enhanced-card" style="--color: 260, 100%, 67%; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <div class="card-icon" style="position: relative;">
+                  <img src="./assets/images/category-4.svg" width="60" height="60" loading="lazy"
+                    alt="Business Digital Strategy" class="img">
+                  <div class="card-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle, transparent, hsla(260, 100%, 67%, 0.2)); border-radius: 50%; opacity: 0; transition: opacity 0.3s ease;"></div>
+                </div>
+                <h3 class="h3">
+                  <a href="#" class="card-title" style="font-size: var(--fs-4);">Digital Strategy</a>
+                </h3>
+                <p class="card-text" style="font-size: var(--fs-6); line-height: 1.6;">
+                  Comprehensive digital strategy consulting for business transformation.
+                </p>
+                <span class="card-badge" style="margin-bottom: 15px; display: inline-block; background: hsla(260, 100%, 67%, 0.1); color: hsl(260, 100%, 67%); padding: 5px 12px; border-radius: 20px; font-size: var(--fs-7);">100+ Consultations</span>
+                <a href="booking.html" class="btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 20px; text-decoration: none; border-radius: var(--radius-5); background: linear-gradient(135deg, hsl(260, 100%, 67%), hsl(260, 100%, 55%)); color: white; font-weight: var(--fw-600); transition: all 0.3s ease;">
+                  <ion-icon name="flash-outline" style="font-size: 18px;"></ion-icon>
+                  <span>Book Now</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" id="about" aria-label="about">
+        <div class="container">
+
+          <figure class="about-banner">
+
+            <div class="img-holder" style="--width: 520; --height: 370;">
+              <img src="./assets/images/about-banner.jpg" width="520" height="370" loading="lazy" alt="about banner"
+                class="img-cover">
+            </div>
+
+            <img src="./assets/images/about-shape-1.svg" width="360" height="420" loading="lazy" alt=""
+              class="shape about-shape-1">
+
+            <img src="./assets/images/about-shape-2.svg" width="371" height="220" loading="lazy" alt=""
+              class="shape about-shape-2">
+
+            <img src="./assets/images/about-shape-3.png" width="722" height="528" loading="lazy" alt=""
+              class="shape about-shape-3">
+
+          </figure>
+
+          <div class="about-content">
+
+            <p class="section-subtitle">About Us</p>
+
+            <h2 class="h2 section-title">
+              Complete <span class="span">Digital Agency</span> for Modern Businesses
+            </h2>
+
+            <p class="section-text">
+              We provide end-to-end digital solutions including web development, app design, branding, and marketing to help businesses thrive online.
+            </p>
+
+            <ul class="about-list">
+
+              <li class="about-item">
+                <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+
+                <span class="span">Full-Service Agency</span>
+              </li>
+
+              <li class="about-item">
+                <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+
+                <span class="span">Multi-Platform Solutions</span>
+              </li>
+
+              <li class="about-item">
+                <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+
+                <span class="span">Results-Driven Approach</span>
+              </li>
+
+            </ul>
+
+            <img src="./assets/images/about-shape-4.svg" width="100" height="100" loading="lazy" alt=""
+              class="shape about-shape-4">
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+      </section>
+
+      <!-- 
+        - #TRUSTED COMPANIES
+      -->
+
+      <section class="section category" aria-label="trusted-companies">
+        <div class="container">
+
+          <p class="section-subtitle">Trusted and Work With</p>
+
+          <h2 class="h2 section-title">
+            Companies who <span class="span">trust our services</span> worldwide.
+          </h2>
+
+          <p class="section-text">
+            We partner with companies of all sizes to deliver exceptional digital solutions.
+          </p>
+
+          <div class="trusted-companies-grid">
+            <div class="company-logo">
+              <img src="./assets/images/category-1.svg" width="120" height="60" loading="lazy" alt="Company 1">
+            </div>
+            
+            <div class="company-logo">
+              <img src="./assets/images/category-2.svg" width="120" height="60" loading="lazy" alt="Company 2">
+            </div>
+            
+            <div class="company-logo">
+              <img src="./assets/images/category-3.svg" width="120" height="60" loading="lazy" alt="Company 3">
+            </div>
+            
+            <div class="company-logo">
+              <img src="./assets/images/category-4.svg" width="120" height="60" loading="lazy" alt="Company 4">
+            </div>
+            
+            <div class="company-logo">
+              <img src="./assets/images/category-1.svg" width="120" height="60" loading="lazy" alt="Company 5">
+            </div>
+            
+            <div class="company-logo">
+              <img src="./assets/images/category-2.svg" width="120" height="60" loading="lazy" alt="Company 6">
+            </div>
+            
+            <div class="company-logo">
+              <img src="./assets/images/category-3.svg" width="120" height="60" loading="lazy" alt="Company 7">
+            </div>
+            
+            <div class="company-logo">
+              <img src="./assets/images/category-4.svg" width="120" height="60" loading="lazy" alt="Company 8">
+            </div>
+            
+            <div class="company-logo">
+              <img src="./assets/images/category-1.svg" width="120" height="60" loading="lazy" alt="Company 9">
+            </div>
+            
+            <div class="company-logo">
+              <img src="./assets/images/category-2.svg" width="120" height="60" loading="lazy" alt="Company 10">
+            </div>
+            
+            <div class="company-logo">
+              <img src="./assets/images/category-3.svg" width="120" height="60" loading="lazy" alt="Company 11">
+            </div>
+            
+            <div class="company-logo">
+              <img src="./assets/images/category-4.svg" width="120" height="60" loading="lazy" alt="Company 12">
+            </div>
+            
+            <div class="company-logo">
+              <img src="./assets/images/category-1.svg" width="120" height="60" loading="lazy" alt="Company 13">
+            </div>
+            
+            <div class="company-logo">
+              <img src="./assets/images/category-2.svg" width="120" height="60" loading="lazy" alt="Company 14">
+            </div>
+            
+            <div class="company-logo">
+              <img src="./assets/images/category-3.svg" width="120" height="60" loading="lazy" alt="Company 15">
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #VIDEO
+      -->
+
+      <section class="video has-bg-image" aria-label="video"
+        style="background-image: url('./assets/images/video-bg.png')">
+        <div class="container">
+
+          <div class="video-card">
+
+            <div class="video-banner img-holder has-after" style="--width: ; --height: ;">
+              <img src="./assets/images/video-banner.jpg" width="970" height="550" loading="lazy" alt="video banner"
+                class="img-cover">
+
+              <button class="play-btn" aria-label="play video">
+                <ion-icon name="play" aria-hidden="true"></ion-icon>
+              </button>
+            </div>
+
+            <img src="./assets/images/video-shape-1.png" width="1089" height="605" loading="lazy" alt=""
+              class="shape video-shape-1">
+
+            <img src="./assets/images/video-shape-2.png" width="158" height="174" loading="lazy" alt=""
+              class="shape video-shape-2">
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #STATE
+      -->
+
+      <section class="section stats" aria-label="stats">
+        <div class="container">
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="stats-card" style="--color: 170, 75%, 41%">
+                <h3 class="card-title">250+</h3>
+
+                <p class="card-text">Projects Delivered</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="stats-card" style="--color: 351, 83%, 61%">
+                <h3 class="card-title">150+</h3>
+
+                <p class="card-text">Websites Launched</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="stats-card" style="--color: 260, 100%, 67%">
+                <h3 class="card-title">98%</h3>
+
+                <p class="card-text">Client Satisfaction</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="stats-card" style="--color: 42, 94%, 55%">
+                <h3 class="card-title">200+</h3>
+
+                <p class="card-text">Happy Clients</p>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #BLOG
+      -->
+
+      <section class="section blog" id="portfolio" aria-label="portfolio">
+        <div class="container">
+
+          <p class="section-subtitle">Our Success Stories</p>
+
+          <h2 class="h2 section-title">Featured Client Projects</h2>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="blog-card">
+
+                <div class="card-icon">
+                  <ion-icon name="cart-outline" class="icon"></ion-icon>
+                </div>
+
+                <div class="card-content">
+
+                  <a href="#" class="card-subtitle">Web Development</a>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">E-commerce Website Redesign</a>
+                  </h3>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
+
+                      <span class="span">Jan 15, 2023</span>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <ion-icon name="chatbubbles-outline" aria-hidden="true"></ion-icon>
+
+                      <span class="span">Case Study</span>
+                    </li>
+
+                  </ul>
+
+                  <p class="card-text">
+                    Complete redesign of e-commerce platform resulting in 150% increase in sales.
+                  </p>
+
+                  <a href="#" class="card-btn" aria-label="view project">
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <div class="card-icon">
+                  <ion-icon name="phone-portrait-outline" class="icon"></ion-icon>
+                </div>
+
+                <div class="card-content">
+
+                  <a href="#" class="card-subtitle">App Development</a>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Mobile Banking App</a>
+                  </h3>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
+
+                      <span class="span">Feb 22, 2023</span>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <ion-icon name="chatbubbles-outline" aria-hidden="true"></ion-icon>
+
+                      <span class="span">Case Study</span>
+                    </li>
+
+                  </ul>
+
+                  <p class="card-text">
+                    Secure banking application with intuitive interface and advanced security features.
+                  </p>
+
+                  <a href="#" class="card-btn" aria-label="view project">
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <div class="card-icon">
+                  <ion-icon name="color-palette-outline" class="icon"></ion-icon>
+                </div>
+
+                <div class="card-content">
+
+                  <a href="#" class="card-subtitle">Branding</a>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Brand Identity Package</a>
+                  </h3>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
+
+                      <span class="span">Mar 5, 2023</span>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <ion-icon name="chatbubbles-outline" aria-hidden="true"></ion-icon>
+
+                      <span class="span">Case Study</span>
+                    </li>
+
+                  </ul>
+
+                  <p class="card-text">
+                    Complete brand identity including logo, colors, typography and marketing materials.
+                  </p>
+
+                  <a href="#" class="card-btn" aria-label="view project">
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer" style="background-image: url('./assets/images/footer-bg.png')">
+
+    <div class="footer-top section">
+      <div class="container grid-list">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+<img src="webikit4.png" width="162" height="50" alt="VectorWeb logo">
+          </a>
+
+          <p class="footer-brand-text">
+            Complete digital solutions including web development, app design, branding, and digital marketing services.
+          </p>
+
+          <div class="wrapper">
+            <span class="span">Add:</span>
+
+            <address class="address">70-80 Upper St Norwich NR2</address>
+          </div>
+
+          <div class="wrapper">
+            <span class="span">Call:</span>
+
+            <a href="tel:+011234567890" class="footer-link">+01 123 4567 890</a>
+          </div>
+
+          <div class="wrapper">
+            <span class="span">Email:</span>
+
+            <a href="mailto:info@vectorweb.com" class="footer-link">info@vectorweb.com</a>
+          </div>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Services</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">About</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Web Development</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">App Development</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Branding & Logo</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Digital Marketing</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Consultation</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title">Company</p>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Contact Us</a>
+          </li>
+
+          <li>
+            <a href="portfolio.html" class="footer-link">Our Work</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Case Studies</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">FAQ's</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Careers</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Privacy Policy</a>
+          </li>
+
+        </ul>
+
+        <div class="footer-list">
+
+          <p class="footer-list-title">Contacts</p>
+
+          <p class="footer-list-text">
+            Subscribe to our newsletter for the latest updates and offers
+          </p>
+
+          <form action="" class="newsletter-form">
+            <input type="email" name="email_address" placeholder="Your email" required class="input-field">
+
+            <button type="submit" class="btn has-before">
+              <span class="span">Subscribe</span>
+
+              <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+            </button>
+          </form>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+
+        <p class="copyright">
+          Copyright 2023 All Rights Reserved by <a href="#" class="copyright-link">VectorWeb</a>
+        </p>
+
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
