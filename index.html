@@ -9,19 +9,19 @@
   <!-- 
     - primary meta tag
   -->
-  <title>WebiKit - Complete Digital Solutions | Web, App & Marketing</title>
+  <title>VectorWeb - Complete Digital Solutions | Web, App & Marketing</title>
   <meta name="title" content="VectorWeb - Web Development, App Design, Branding & Digital Marketing Experts">
   <meta name="description" content="Complete digital solutions including web development, mobile app development, branding, logo design, and digital marketing services">
 
   <!-- 
     - favicon
   -->
-  <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
 
   <!-- 
     - google font link
@@ -35,15 +35,22 @@
   <!-- 
     - preload images
   -->
-  <link rel="preload" as="image" href="hero-bg.svg">
-  <link rel="preload" as="image" href="hero-banner-1.jpg">
-  <link rel="preload" as="image" href="hero-banner-2.jpg">
-  <link rel="preload" as="image" href="hero-shape-1.svg">
-  <link rel="preload" as="image" href="hero-shape-2.png">
+  <link rel="preload" as="image" href="./assets/images/hero-bg.svg">
+  <link rel="preload" as="image" href="./assets/images/hero-banner-1.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-banner-2.jpg">
+  <link rel="preload" as="image" href="./assets/images/hero-shape-1.svg">
+  <link rel="preload" as="image" href="./assets/images/hero-shape-2.png">
 
 </head>
 
 <body id="top">
+
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">WebiKit @ vector</div>
+    <div class="loading-subtitle">Digital Solutions</div>
+  </div>
 
   <!-- 
     - #HEADER
@@ -82,8 +89,16 @@
             <a href="#about" class="navbar-link" data-nav-link>About</a>
           </li>
 
-          <li class="navbar-item">
-            <a href="#services" class="navbar-link" data-nav-link>Services</a>
+          <li class="navbar-item dropdown">
+            <a href="#services" class="navbar-link dropdown-toggle" data-nav-link>Services <ion-icon name="chevron-down-outline" style="font-size: 14px; margin-left: 5px;"></ion-icon></a>
+            <ul class="dropdown-menu">
+              <li><a href="#services" class="dropdown-item">All Services</a></li>
+              <li><a href="#web-development" class="dropdown-item">Web Development</a></li>
+              <li><a href="#app-development" class="dropdown-item">App Development</a></li>
+              <li><a href="#branding" class="dropdown-item">Branding & Logo</a></li>
+              <li><a href="#digital-marketing" class="dropdown-item">Digital Marketing</a></li>
+              <li><a href="#digital-strategy" class="dropdown-item">Digital Strategy</a></li>
+            </ul>
           </li>
 
           <li class="navbar-item">
@@ -154,7 +169,7 @@
       -->
 
       <section class="section hero has-bg-image" id="home" aria-label="home"
-        style="background-image: url('hero-bg.svg')">
+        style="background-image: url('./assets/images/hero-bg.svg')">
         <div class="container">
 
           <div class="hero-content">
@@ -178,16 +193,16 @@
           <figure class="hero-banner">
 
             <div class="img-holder one" style="--width: 270; --height: 300;">
-              <img src="hero-banner-1.jpg" width="270" height="300" alt="hero banner" class="img-cover">
+              <img src="./assets/images/hero-banner-1.jpg" width="270" height="300" alt="hero banner" class="img-cover">
             </div>
 
             <div class="img-holder two" style="--width: 240; --height: 370;">
-              <img src="hero-banner-2.jpg" width="240" height="370" alt="hero banner" class="img-cover">
+              <img src="./assets/images/hero-banner-2.jpg" width="240" height="370" alt="hero banner" class="img-cover">
             </div>
 
-            <img src="hero-shape-1.svg" width="380" height="190" alt="" class="shape hero-shape-1">
+            <img src="./assets/images/hero-shape-1.svg" width="380" height="190" alt="" class="shape hero-shape-1">
 
-            <img src="hero-shape-2.png" width="622" height="551" alt="" class="shape hero-shape-2">
+            <img src="./assets/images/hero-shape-2.png" width="622" height="551" alt="" class="shape hero-shape-2">
 
           </figure>
 
@@ -242,7 +257,7 @@
             <div class="service-grid" style="justify-content: flex-start; gap: 25px;">
               <div class="category-card enhanced-card" style="--color: 170, 75%, 41%; transition: transform 0.3s ease, box-shadow 0.3s ease;">
                 <div class="card-icon" style="position: relative;">
-                  <img src="category-1.svg" width="60" height="60" loading="lazy"
+                  <img src="./assets/images/category-1.svg" width="60" height="60" loading="lazy"
                     alt="Professional Web Development Services" class="img">
                   <div class="card-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle, transparent, hsla(170, 75%, 41%, 0.2)); border-radius: 50%; opacity: 0; transition: opacity 0.3s ease;"></div>
                 </div>
@@ -280,7 +295,7 @@
               
               <div class="category-card enhanced-card" style="--color: 229, 75%, 58%; transition: transform 0.3s ease, box-shadow 0.3s ease;">
                 <div class="card-icon" style="position: relative;">
-                  <img src="category-3.svg" width="60" height="60" loading="lazy"
+                  <img src="./assets/images/category-3.svg" width="60" height="60" loading="lazy"
                     alt="Complete Branding & Logo Design" class="img">
                   <div class="card-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle, transparent, hsla(229, 75%, 58%, 0.2)); border-radius: 50%; opacity: 0; transition: opacity 0.3s ease;"></div>
                 </div>
@@ -299,7 +314,7 @@
               
               <div class="category-card enhanced-card" style="--color: 42, 94%, 55%; transition: transform 0.3s ease, box-shadow 0.3s ease;">
                 <div class="card-icon" style="position: relative;">
-                  <img src="category-4.svg" width="60" height="60" loading="lazy"
+                  <img src="./assets/images/category-4.svg" width="60" height="60" loading="lazy"
                     alt="Strategic Digital Marketing" class="img">
                   <div class="card-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle, transparent, hsla(42, 94%, 55%, 0.2)); border-radius: 50%; opacity: 0; transition: opacity 0.3s ease;"></div>
                 </div>
@@ -318,7 +333,7 @@
               
               <div class="category-card enhanced-card" style="--color: 260, 100%, 67%; transition: transform 0.3s ease, box-shadow 0.3s ease;">
                 <div class="card-icon" style="position: relative;">
-                  <img src="category-4.svg" width="60" height="60" loading="lazy"
+                  <img src="./assets/images/category-4.svg" width="60" height="60" loading="lazy"
                     alt="Business Digital Strategy" class="img">
                   <div class="card-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle, transparent, hsla(260, 100%, 67%, 0.2)); border-radius: 50%; opacity: 0; transition: opacity 0.3s ease;"></div>
                 </div>
@@ -354,17 +369,17 @@
           <figure class="about-banner">
 
             <div class="img-holder" style="--width: 520; --height: 370;">
-              <img src="about-banner.jpg" width="520" height="370" loading="lazy" alt="about banner"
+              <img src="./assets/images/about-banner.jpg" width="520" height="370" loading="lazy" alt="about banner"
                 class="img-cover">
             </div>
 
-            <img src="about-shape-1.svg" width="360" height="420" loading="lazy" alt=""
+            <img src="./assets/images/about-shape-1.svg" width="360" height="420" loading="lazy" alt=""
               class="shape about-shape-1">
 
-            <img src="about-shape-2.svg" width="371" height="220" loading="lazy" alt=""
+            <img src="./assets/images/about-shape-2.svg" width="371" height="220" loading="lazy" alt=""
               class="shape about-shape-2">
 
-            <img src="about-shape-3.png" width="722" height="528" loading="lazy" alt=""
+            <img src="./assets/images/about-shape-3.png" width="722" height="528" loading="lazy" alt=""
               class="shape about-shape-3">
 
           </figure>
@@ -403,7 +418,7 @@
 
             </ul>
 
-            <img src="about-shape-4.svg" width="100" height="100" loading="lazy" alt=""
+            <img src="./assets/images/about-shape-4.svg" width="100" height="100" loading="lazy" alt=""
               class="shape about-shape-4">
 
           </div>
@@ -442,65 +457,32 @@
           </p>
 
           <div class="trusted-companies-grid">
+            
             <div class="company-logo">
-              <img src="./assets/images/category-1.svg" width="120" height="60" loading="lazy" alt="Company 1">
+              <img src="./assets/images/nestlelogo.png" width="120" height="60" loading="lazy" alt="Company 8">
             </div>
             
             <div class="company-logo">
-              <img src="./assets/images/category-2.svg" width="120" height="60" loading="lazy" alt="Company 2">
+              <img src="./assets/images/iconlogo.jpg" width="120" height="60" loading="lazy" alt="Company 9">
             </div>
             
             <div class="company-logo">
-              <img src="./assets/images/category-3.svg" width="120" height="60" loading="lazy" alt="Company 3">
+              <img src="./assets/images/lawscent.png" width="120" height="60" loading="lazy" alt="Company 10">
             </div>
             
             <div class="company-logo">
-              <img src="./assets/images/category-4.svg" width="120" height="60" loading="lazy" alt="Company 4">
+              <img src="./assets/images/mediVastLogo.jpg" width="120" height="60" loading="lazy" alt="Company 11">
             </div>
             
             <div class="company-logo">
-              <img src="./assets/images/category-1.svg" width="120" height="60" loading="lazy" alt="Company 5">
+              <img src="./assets/images/hvb.jpg" width="120" height="60" loading="lazy" alt="Company 12">
             </div>
             
             <div class="company-logo">
-              <img src="./assets/images/category-2.svg" width="120" height="60" loading="lazy" alt="Company 6">
+              <img src="./assets/images/teac.jpg" width="120" height="60" loading="lazy" alt="Company 13">
             </div>
             
-            <div class="company-logo">
-              <img src="./assets/images/category-3.svg" width="120" height="60" loading="lazy" alt="Company 7">
-            </div>
-            
-            <div class="company-logo">
-              <img src="./assets/images/category-4.svg" width="120" height="60" loading="lazy" alt="Company 8">
-            </div>
-            
-            <div class="company-logo">
-              <img src="./assets/images/category-1.svg" width="120" height="60" loading="lazy" alt="Company 9">
-            </div>
-            
-            <div class="company-logo">
-              <img src="./assets/images/category-2.svg" width="120" height="60" loading="lazy" alt="Company 10">
-            </div>
-            
-            <div class="company-logo">
-              <img src="./assets/images/category-3.svg" width="120" height="60" loading="lazy" alt="Company 11">
-            </div>
-            
-            <div class="company-logo">
-              <img src="./assets/images/category-4.svg" width="120" height="60" loading="lazy" alt="Company 12">
-            </div>
-            
-            <div class="company-logo">
-              <img src="./assets/images/category-1.svg" width="120" height="60" loading="lazy" alt="Company 13">
-            </div>
-            
-            <div class="company-logo">
-              <img src="./assets/images/category-2.svg" width="120" height="60" loading="lazy" alt="Company 14">
-            </div>
-            
-            <div class="company-logo">
-              <img src="./assets/images/category-3.svg" width="120" height="60" loading="lazy" alt="Company 15">
-            </div>
+           
           </div>
 
         </div>
@@ -509,34 +491,6 @@
       <!-- 
         - #VIDEO
       -->
-
-      <section class="video has-bg-image" aria-label="video"
-        style="background-image: url('./assets/images/video-bg.png')">
-        <div class="container">
-
-          <div class="video-card">
-
-            <div class="video-banner img-holder has-after" style="--width: ; --height: ;">
-              <img src="./assets/images/video-banner.jpg" width="970" height="550" loading="lazy" alt="video banner"
-                class="img-cover">
-
-              <button class="play-btn" aria-label="play video">
-                <ion-icon name="play" aria-hidden="true"></ion-icon>
-              </button>
-            </div>
-
-            <img src="./assets/images/video-shape-1.png" width="1089" height="605" loading="lazy" alt=""
-              class="shape video-shape-1">
-
-            <img src="./assets/images/video-shape-2.png" width="158" height="174" loading="lazy" alt=""
-              class="shape video-shape-2">
-
-          </div>
-
-        </div>
-      </section>
-
-
 
 
 
@@ -945,6 +899,9 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Loading and Cursor Effects JavaScript -->
+  <script src="./assets/js/cursor-effects.js"></script>
 
 </body>
 
